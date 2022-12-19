@@ -15,10 +15,10 @@ export class BeneficiarioListaComponent {
   personSelected!: IBeneficiarioDto;
 
   constructor(private http: HttpClient, private router: Router) {
-    this.getAll();
+    this.listarTodos();
   }
 
-  getAll() {
+  listarTodos() {
     this.listaBeneficiarios = [];
 
     this.http
@@ -36,22 +36,24 @@ export class BeneficiarioListaComponent {
       });
   }
 
-  /*
-  getOne(id: number) {
-    this.router.navigate([`detail/${id}`]);
+
+  listarPorId(id: number) {
+    console.log('herreeeeee');
+    this.router.navigate([`beneficiarios/listarporid/${id}`]);
   }
 
-  create() {
-    this.router.navigate([`create`]);
+  /*
+  criar() {
+    this.router.navigate([`criar`]);
   }
   
  
-  update(id: number) {
-    this.router.navigate([`update/${id}`]);
+  atualizar(id: number) {
+    this.router.navigate([`atualizar/${id}`]);
   }
 
-  delete(id: number) {
-    this.router.navigate([`delete/${id}`]);
+  deletar(id: number) {
+    this.router.navigate([`deletar/${id}`]);
   }
   */
 }

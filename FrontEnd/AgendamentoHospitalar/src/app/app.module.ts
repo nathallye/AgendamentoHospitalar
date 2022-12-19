@@ -8,12 +8,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BeneficiarioListaComponent } from './beneficiario-lista';
+import { BeneficiarioDetalheComponent } from './beneficiario-detalhe/beneficiario-detalhe.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    BeneficiarioListaComponent
+    BeneficiarioListaComponent,
+    BeneficiarioDetalheComponent
   ],
   imports: [
     BrowserModule,
