@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { BeneficiarioListaComponent } from './beneficiario-lista';
 import { BeneficiarioDetalheComponent } from './beneficiario-detalhe/beneficiario-detalhe.component';
+import { BeneficiarioCriarComponent } from './beneficiario-criar/beneficiario-criar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BeneficiarioListaComponent,
-    BeneficiarioDetalheComponent
+    BeneficiarioDetalheComponent,
+    BeneficiarioCriarComponent
   ],
   imports: [
     BrowserModule,
