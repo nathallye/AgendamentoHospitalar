@@ -10,6 +10,7 @@ import { HeaderComponent } from './header/header.component';
 import { BeneficiarioListaComponent } from './beneficiario-lista';
 import { BeneficiarioDetalheComponent } from './beneficiario-detalhe/beneficiario-detalhe.component';
 import { BeneficiarioCriarComponent } from './beneficiario-criar/beneficiario-criar.component';
+import { BeneficiarioEditarComponent } from './beneficiario-editar/beneficiario-editar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { BeneficiarioCriarComponent } from './beneficiario-criar/beneficiario-cr
     HeaderComponent,
     BeneficiarioListaComponent,
     BeneficiarioDetalheComponent,
-    BeneficiarioCriarComponent
+    BeneficiarioCriarComponent,
+    BeneficiarioEditarComponent
   ],
   imports: [
     BrowserModule,
