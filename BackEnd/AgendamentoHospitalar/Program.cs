@@ -35,6 +35,10 @@ builder.Services.AddCors(options =>
         });
 });
 
+builder.Services.AddDbContext<AgendamentoHospitalar.Repository.Context.DatabaseContext>();
+
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IBeneficiarioRepository, AgendamentoHospitalar.Repository.BeneficiarioRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
