@@ -42,12 +42,11 @@ export class BeneficiarioListaComponent {
     this.router.navigate([`beneficiarios/listarporid/${id}`]);
   }
 
-  /*
   criar() {
-    this.router.navigate([`criar`]);
+    this.router.navigate([`beneficiarios/criar`]);
   }
   
- 
+  /*
   atualizar(id: number) {
     this.router.navigate([`atualizar/${id}`]);
   }
