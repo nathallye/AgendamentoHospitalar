@@ -18,6 +18,8 @@
           <th>Telefone</th>
           <th>E-mail</th>
           <th>Endereço</th>
+          <th>Ativo</th>
+          <th></th>
         </tr>
       </thead>
     
@@ -29,13 +31,12 @@
           <td>{{beneficiarioItem.telefone}}</td>
           <td>{{beneficiarioItem.email}}</td>
           <td>{{beneficiarioItem.endereco}}</td>
-
+          <td>{{beneficiarioItem.ativo}}</td>
           <td>
             <!--
             <i (click)="excluir(beneficiarioItem.id)" class="material-icons">delete</i>
-            <i (click)="atualizar(beneficiarioItem.id)" class="material-icons">edit</i>
-            <i (click)="listarPorId(beneficiarioItem.id)" class="material-icons">visibility</i>
-            -->
+            <i (click)="atualizar(beneficiarioItem.id)" class="material-icons">edit</i> -->
+            <i (click)="listarPorId(beneficiarioItem.idBeneficiario)" class="material-icons">visibility</i>
           </td>
         </tr>
       </tbody>
