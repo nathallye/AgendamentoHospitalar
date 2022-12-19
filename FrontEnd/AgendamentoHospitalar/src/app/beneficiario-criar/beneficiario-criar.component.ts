@@ -60,6 +60,6 @@ export class BeneficiarioCriarComponent {
   }
 
   sair() {
-    this.router.navigate([`beneficiarios/listartodos`]);
+    this.router.navigate(['beneficiarios/listartodos']);
   }
 }
