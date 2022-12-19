@@ -5,11 +5,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IBeneficiarioDto } from '../interfaces/IBeneficiarioDto';
 
 @Component({
-  selector: 'app-beneficiario-editar',
-  templateUrl: './beneficiario-editar.component.html',
-  styleUrls: ['./beneficiario-editar.component.css']
+  selector: 'app-beneficiario-excluir',
+  templateUrl: './beneficiario-excluir.component.html',
+  styleUrls: ['./beneficiario-excluir.component.css']
 })
-export class BeneficiarioEditarComponent {
+export class BeneficiarioExcluirComponent {
   beneficiario!: IBeneficiarioDto;
   idRecebido!: number;
 
@@ -41,31 +41,19 @@ export class BeneficiarioEditarComponent {
     }
   }
 
-  salvar() {
-    if (this.validarInformacoes()) {
-      if (this.beneficiario.idBeneficiario != 0) {
-
-        this.http.patch(`https://localhost:7275/api/Beneficiarios/Atualizar/${this.idRecebido}`, this.beneficiario)
-          .subscribe((data) => {
-            this.router.navigate(['beneficiarios/listartodos']);
-          });
-      } else {
-        console.log('Erro na validação');
-        // TRATAMENTO DE ERRO
-        // ALERTA
-        // BORDA VERMELHA
-      }
+  apagar() {
+    if (this.beneficiario.idBeneficiario !== 0) {
+      this.http.delete(`https://localhost:7275/api/Beneficiarios/Excluir/${this.idRecebido}`)
+      .subscribe((data) => {
+        this.router.navigate(['beneficiarios/listartodos']);
+      });
+  
+    } else {
+      console.log('Erro na validação');
+      // TRATAMENTO DE ERRO
+      // ALERTA
+      // BORDA VERMELHA
     }
-  }
-
-  validarInformacoes(): boolean {
-    if (this.beneficiario.nome == '') {
-      return false;
-    }
-
-    // VALIDAR COM REGEX
-
-    return true;
   }
 
   sair() {

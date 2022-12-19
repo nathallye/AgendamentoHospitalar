@@ -43,16 +43,14 @@ export class BeneficiarioListaComponent {
   }
 
   criar() {
-    this.router.navigate([`beneficiarios/criar`]);
+    this.router.navigate(['beneficiarios/criar']);
   }
   
   editar(id: number) {
     this.router.navigate([`beneficiarios/editar/${id}`]);
   }
 
-  /*
-  deletar(id: number) {
-    this.router.navigate([`deletar/${id}`]);
+  excluir(id: number) {
+    this.router.navigate([`beneficiarios/exluir/${id}`]);
   }
-  */
 }

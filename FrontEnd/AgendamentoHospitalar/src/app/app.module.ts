@@ -11,6 +11,7 @@ import { BeneficiarioListaComponent } from './beneficiario-lista';
 import { BeneficiarioDetalheComponent } from './beneficiario-detalhe/beneficiario-detalhe.component';
 import { BeneficiarioCriarComponent } from './beneficiario-criar/beneficiario-criar.component';
 import { BeneficiarioEditarComponent } from './beneficiario-editar/beneficiario-editar.component';
+import { BeneficiarioExcluirComponent } from './beneficiario-excluir/beneficiario-excluir.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { BeneficiarioEditarComponent } from './beneficiario-editar/beneficiario-
     BeneficiarioListaComponent,
     BeneficiarioDetalheComponent,
     BeneficiarioCriarComponent,
-    BeneficiarioEditarComponent
+    BeneficiarioEditarComponent,
+    BeneficiarioExcluirComponent
   ],
   imports: [
     BrowserModule,

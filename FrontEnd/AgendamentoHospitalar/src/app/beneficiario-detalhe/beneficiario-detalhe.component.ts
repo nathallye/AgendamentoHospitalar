@@ -42,6 +42,6 @@ export class BeneficiarioDetalheComponent {
   }
 
   fechar() {
-    this.router.navigate([`beneficiarios/listartodos`]);
+    this.router.navigate(['beneficiarios/listartodos']);
   }
 }

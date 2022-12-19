@@ -1,0 +1,45 @@
+<div class="detail-group">
+  <div class="container">
+  
+    <div class="title">
+      <h4>Excluir Beneficiário</h4>
+      <h4 class="text-danger">Tem certeza de que deseja excluir?</h4> 
+    </div>
+  
+    <div class="detail">
+      <dl>
+        <dt>Nome: </dt>
+        <dd>{{beneficiario.nome}}</dd>
+      </dl>
+      <dl>
+        <dt>CPF:</dt>
+        <dd>{{beneficiario.cpf}}</dd>
+      </dl>
+      <dl>
+        <dt>Número Carteirinha:</dt>
+        <dd>{{beneficiario.numeroCarteirinha}}</dd>
+      </dl>
+      <dl>
+        <dt>Telefone:</dt>
+        <dd>{{beneficiario.telefone}}</dd>
+      </dl>
+      <dl>
+        <dt>E-mail:</dt>
+        <dd>{{beneficiario.email}}</dd>
+      </dl>
+      <dl>
+        <dt>Endereço:</dt>
+        <dd>{{beneficiario.endereco}}</dd>
+      </dl>
+      <dl>
+        <dt>Ativo:</dt>
+        <dd>{{beneficiario.ativo}}</dd>
+      </dl>
+    </div>
+   
+    <div class="mb-3 row">
+      <button (click)="apagar()" class="exclude">Excluir</button>
+      <button (click)="sair()">Fechar</button>
+    </div>
+  </div>
+</div>
