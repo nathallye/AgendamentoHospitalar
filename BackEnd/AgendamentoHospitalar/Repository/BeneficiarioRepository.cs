@@ -85,6 +85,7 @@ namespace AgendamentoHospitalar.Repository
 
             Beneficiario beneficiarioEntidade = new Beneficiario()
             {
+                IdBeneficiario = beneficiario.IdBeneficiario,
                 Nome = (beneficiario.Nome != null ? beneficiario.Nome : beneficiarioEntidadeBD.Nome),
                 Cpf = (beneficiario.Cpf != null ? beneficiario.Cpf : beneficiarioEntidadeBD.Cpf),
                 Telefone = (beneficiario.Telefone != null ? beneficiario.Telefone : beneficiarioEntidadeBD.Telefone),
@@ -96,7 +97,7 @@ namespace AgendamentoHospitalar.Repository
             };
 
             _context.ChangeTracker.Clear();
-            _context.Beneficiario.Add(beneficiarioEntidade);
+            _context.Beneficiario.Update(beneficiarioEntidade);
             _context.SaveChanges();
             return beneficiarioEntidade;
         }
