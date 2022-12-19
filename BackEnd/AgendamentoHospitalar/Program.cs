@@ -11,6 +11,19 @@ builder.Services.AddDbContext<AgendamentoHospitalar.Repository.Context.DatabaseC
 
 builder.Services.AddScoped<AgendamentoHospitalar.Interface.IBeneficiarioRepository, AgendamentoHospitalar.Repository.BeneficiarioRepository>();
 
+// CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MyRuleCors",
+        policy =>
+        {
+            policy.AllowAnyHeader()
+            .AllowAnyOrigin()
+            .AllowAnyMethod();
+
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -19,6 +32,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("MyRuleCors");
 
 app.UseHttpsRedirection();
 
