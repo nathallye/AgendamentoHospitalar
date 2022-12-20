@@ -106,7 +106,6 @@ namespace AgendamentoHospitalar.Controllers
             }
             catch (Exception ex)
             {
-                // retorna para tela do formulário
                 return BadRequest(ex.Message);
             }
         }
