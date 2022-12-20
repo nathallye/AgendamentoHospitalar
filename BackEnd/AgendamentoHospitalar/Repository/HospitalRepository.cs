@@ -1,4 +1,5 @@
-﻿using AgendamentoHospitalar.Dto.Hospital;
+﻿using AgendamentoHospitalar.Dto.Beneficiario;
+using AgendamentoHospitalar.Dto.Hospital;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
 using AgendamentoHospitalar.Repository.Context;
@@ -64,5 +65,46 @@ namespace AgendamentoHospitalar.Repository
             return hospitalEntidade;
         }
 
+        public Hospital Atualizar(HospitalAtualizarDto hospital)
+        {
+            Hospital hospitalEntidadeBD =
+                (from c in _context.Hospitais
+                 where c.IdHospital == hospital.IdHospital
+                 select c)
+                 ?.FirstOrDefault()
+                 ?? new Hospital();
+
+            if (hospitalEntidadeBD == null || DBNull.Value.Equals(hospitalEntidadeBD.IdHospital) || hospitalEntidadeBD.IdHospital == 0)
+            {
+                return null;
+            }
+
+            Hospital hospitalEntidade = new Hospital()
+            {
+                IdHospital = hospital.IdHospital,
+                Nome = (hospital.Nome != null ? hospital.Nome : hospitalEntidadeBD.Nome),
+                Cnpj = (hospital.Cnpj != null ? hospital.Cnpj : hospitalEntidadeBD.Cnpj),
+                Telefone = (hospital.Telefone != null ? hospital.Telefone : hospitalEntidadeBD.Telefone),
+                Endereço = (hospital.Endereço != null ? hospital.Endereço : hospitalEntidadeBD.Endereço),
+                Cnes = (hospital.Cnes != null ? hospital.Cnes : hospitalEntidadeBD.Cnes),
+                Ativo = hospital.Ativo
+            };
+
+            _context.ChangeTracker.Clear();
+            _context.Hospitais.Update(hospitalEntidade);
+            _context.SaveChanges();
+            return hospitalEntidade;
+        }
+
+        public int Excluir(int id)
+        {
+            var hospital = new Hospital()
+            {
+                IdHospital = id
+            };
+
+            _context.Hospitais.Remove(hospital);
+            return _context.SaveChanges();
+        }
     }
 }

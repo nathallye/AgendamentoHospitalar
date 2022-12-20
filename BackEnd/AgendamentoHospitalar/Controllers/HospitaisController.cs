@@ -2,6 +2,7 @@
 using AgendamentoHospitalar.Dto.Hospital;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendamentoHospitalar.Controllers
@@ -79,6 +80,42 @@ namespace AgendamentoHospitalar.Controllers
                 Hospital hospitalEntidade = _hospitalRepository.Criar(novoHospital);
 
                 return Ok(hospitalEntidade);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPatch]
+        [Route("Atualizar/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Hospital))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Update(HospitalAtualizarDto hospital)
+        {
+            try
+            {
+                Hospital hospitalEntidade = _hospitalRepository.Atualizar(hospital);
+
+                return Ok(hospitalEntidade);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("Excluir/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Excluir(int id)
+        {
+            try
+            {
+                int linhasRetornadas = _hospitalRepository.Excluir(id);
+                return Ok(linhasRetornadas);
             }
             catch (Exception ex)
             {
