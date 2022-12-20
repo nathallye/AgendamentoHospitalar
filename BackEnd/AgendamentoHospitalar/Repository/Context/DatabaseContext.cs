@@ -20,7 +20,7 @@ public class DatabaseContext : DbContext
 
     public DbSet<AgendamentoConfiguracao> AgendamentoConfiguracaos { get; set; }
 
-    public DbSet<Beneficiario> Beneficiario { get; set; }
+    public DbSet<Beneficiario> Beneficiarios { get; set; }
 
     public DbSet<DadosBancario> DadosBancarios { get; set; }
 
