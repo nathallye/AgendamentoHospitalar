@@ -1,0 +1,29 @@
+<div class="detail-group">
+  <div class="container">
+
+    <div class="title">
+      <h4>Excluir Especialidade</h4>
+      <h4 class="text-danger">Tem certeza de que deseja excluir?</h4>
+    </div>
+
+    <div class="detail">
+      <dl>
+        <dt>Nome: </dt>
+        <dd>{{especialidade.nome}}</dd>
+      </dl>
+      <dl>
+        <dt>Descriçao:</dt>
+        <dd>{{especialidade.descricao}}</dd>
+      </dl>
+      <dl>
+        <dt>Ativo:</dt>
+        <dd>{{especialidade.ativo}}</dd>
+      </dl>
+    </div>
+
+    <div class="mb-3 row">
+      <button (click)="apagar()" class="exclude">Excluir</button>
+      <button (click)="sair()">Fechar</button>
+    </div>
+  </div>
+</div>
