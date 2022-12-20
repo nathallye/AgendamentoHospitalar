@@ -16,7 +16,7 @@ namespace AgendamentoHospitalar.Repository
 
         public List<BeneficiarioDto> ListarTodos()
         {
-            return _context.Beneficiario.Select(s => new BeneficiarioDto()
+            return _context.Beneficiarios.Select(s => new BeneficiarioDto()
             {
                 IdBeneficiario = s.IdBeneficiario,
                 Nome = s.Nome,
@@ -31,7 +31,7 @@ namespace AgendamentoHospitalar.Repository
 
         public BeneficiarioDto ListarPorId(int id)
         {
-            return (from t in _context.Beneficiario
+            return (from t in _context.Beneficiarios
                     where t.IdBeneficiario == id
                     select new BeneficiarioDto()
                     {
@@ -64,7 +64,7 @@ namespace AgendamentoHospitalar.Repository
             };
 
             _context.ChangeTracker.Clear();
-            _context.Beneficiario.Add(beneficiarioEntidade);
+            _context.Beneficiarios.Add(beneficiarioEntidade);
             _context.SaveChanges();
             return beneficiarioEntidade;
         }
@@ -72,7 +72,7 @@ namespace AgendamentoHospitalar.Repository
         public Beneficiario Atualizar(BeneficiarioAtualizarDto beneficiario)
         {
             Beneficiario beneficiarioEntidadeBD =
-                (from c in _context.Beneficiario
+                (from c in _context.Beneficiarios
                  where c.IdBeneficiario == beneficiario.IdBeneficiario
                  select c)
                  ?.FirstOrDefault()
@@ -97,7 +97,7 @@ namespace AgendamentoHospitalar.Repository
             };
 
             _context.ChangeTracker.Clear();
-            _context.Beneficiario.Update(beneficiarioEntidade);
+            _context.Beneficiarios.Update(beneficiarioEntidade);
             _context.SaveChanges();
             return beneficiarioEntidade;
         }
@@ -109,7 +109,7 @@ namespace AgendamentoHospitalar.Repository
                 IdBeneficiario = id
             };
 
-            _context.Beneficiario.Remove(beneficiario);
+            _context.Beneficiarios.Remove(beneficiario);
             return _context.SaveChanges();
         }
     }
