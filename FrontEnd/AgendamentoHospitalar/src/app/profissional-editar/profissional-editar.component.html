@@ -1,0 +1,41 @@
+<div class="form-group">
+  <form>
+    <h4>Atualizar Beneficiário</h4>
+    <hr />
+
+    <div class="container">
+      <div class="mb-3 row">
+        <label for="nomeProfissional" class="col-sm-4 col-form-label">Nome</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="nomeProfissional" [(ngModel)]="profissional.nome" name="nomeProfissional">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="telefone" class="col-sm-4 col-form-label">Telefone</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="telefone" [(ngModel)]="profissional.telefone" name="telefone">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="endereco" class="col-sm-4 col-form-label">Endereço</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="endereco" [(ngModel)]="profissional.endereco" name="endereco">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="ativo" class="col-sm-4 col-form-label">Ativo</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="ativo" [(ngModel)]="profissional.ativo" name="ativo">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <button (click)="salvar()" class="save">Salvar</button>
+        <button (click)="sair()">Fechar</button>
+      </div>
+    </div>
+  </form>
+</div>
