@@ -22,7 +22,7 @@ export class ProfissionalListaComponent {
     this.listaProfissional = [];
 
     this.http
-      .get('https://localhost:7275/api/Profissinal/ListarTodos')
+      .get('https://localhost:7275/api/Profissional/ListarTodos')
       .pipe(
         map((response: any) => {
           return Object.values(response);

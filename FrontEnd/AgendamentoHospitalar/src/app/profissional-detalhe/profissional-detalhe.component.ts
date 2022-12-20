@@ -22,7 +22,7 @@ export class ProfissionalDetalheComponent {
   ngOnInit(): void {
     if (this.idRecebido) {
       this.http
-        .get(`https://localhost:7275/api/Profissionais/ListarPorId/${this.idRecebido}`)
+        .get(`https://localhost:7275/api/Profissional/ListarPorId/${this.idRecebido}`)
         .subscribe((data) => {
 
           this.profissional = data as IProfissionalDto;
@@ -39,6 +39,6 @@ export class ProfissionalDetalheComponent {
   }
 
   fechar() {
-    this.router.navigate(['profissionais/listartodos']);
+    this.router.navigate(['profissional/listartodos']);
   }
 }

@@ -22,7 +22,7 @@ export class ProfissionalExcluirComponent {
   ngOnInit(): void {
     if (this.idRecebido) {
       this.http
-        .get(`https://localhost:7275/api/Beneficiarios/ListarPorId/${this.idRecebido}`)
+        .get(`https://localhost:7275/api/Profissional/ListarPorId/${this.idRecebido}`)
         .subscribe((data) => {
 
           this.profissional = data as IProfissionalDto;
@@ -42,7 +42,7 @@ export class ProfissionalExcluirComponent {
     if (this.profissional.idProfissional !== 0) {
       this.http.delete(`https://localhost:7275/api/Profissional/Excluir/${this.idRecebido}`)
       .subscribe((data) => {
-        this.router.navigate(['profissionais/listartodos']);
+        this.router.navigate(['profissional/listartodos']);
       });
 
     } else {
@@ -54,6 +54,6 @@ export class ProfissionalExcluirComponent {
   }
 
   sair() {
-    this.router.navigate(['profissionais/listartodos']);
+    this.router.navigate(['profissional/listartodos']);
   }
 }
