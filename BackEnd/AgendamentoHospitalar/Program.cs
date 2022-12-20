@@ -10,6 +10,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AgendamentoHospitalar.Repository.Context.DatabaseContext>();
 
 builder.Services.AddScoped<AgendamentoHospitalar.Interface.IBeneficiarioRepository, AgendamentoHospitalar.Repository.BeneficiarioRepository>();
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IHospitalRepository, AgendamentoHospitalar.Repository.HospitalRepository>();
 
 // CORS
 builder.Services.AddCors(options =>

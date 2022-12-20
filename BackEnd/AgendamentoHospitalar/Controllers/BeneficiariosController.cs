@@ -45,6 +45,7 @@ namespace AgendamentoHospitalar.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
         // GET localhost:7275/api/Benficiarios/ListarPorId?id={}
         [HttpGet]
         [Route("ListarPorId/{id}")]
@@ -89,7 +90,7 @@ namespace AgendamentoHospitalar.Controllers
             }
         }
 
-        // Patch localhost:7275/api/Benficiarios/Update?id={}
+        // PATCH localhost:7275/api/Benficiarios/Update?id={}
         [HttpPatch]
         [Route("Atualizar/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Beneficiario))]
