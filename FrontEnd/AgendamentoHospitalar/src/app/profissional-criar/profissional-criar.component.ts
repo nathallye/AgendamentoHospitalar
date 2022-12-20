@@ -33,9 +33,9 @@ export class ProfissionalCriarComponent {
     if (this.validarInformacoes()) {
       if (this.profissional.idProfissional == 0) {
 
-        this.http.post('https://localhost:7275/api/Profissionais/Criar', this.profissional)
+        this.http.post('https://localhost:7275/api/Profissional/Criar', this.profissional)
           .subscribe((data) => {
-            this.router.navigate(['profissionais/listartodos']);
+            this.router.navigate(['profissional/listartodos']);
           });
       } else {
         console.log('Erro na validação');
@@ -57,6 +57,6 @@ export class ProfissionalCriarComponent {
   }
 
   sair() {
-    this.router.navigate(['profissionais/listartodos']);
+    this.router.navigate(['profissional/listartodos']);
   }
 }

@@ -8,11 +8,11 @@ import { ProfissionalEditarComponent } from './profissional-editar';
 import { ProfissionalExcluirComponent } from './profissional-excluir/profissional-excluir.component';
 
 const routes: Routes = [
-  { path: 'profissionais/listartodos', component: ProfissionalListaComponent },
-  { path: 'profissionais/listarporid/:id', component: ProfissionalDetalheComponent },
-  { path: 'profissionais/criar', component: ProfissionalCriarComponent },
-  { path: 'profissionais/editar/:id', component: ProfissionalEditarComponent },
-  { path: 'profissionais/exluir/:id', component: ProfissionalExcluirComponent }
+  { path: 'profissional', component: ProfissionalListaComponent },
+  { path: 'profissional/listarporid/:id', component: ProfissionalDetalheComponent },
+  { path: 'profissional/criar', component: ProfissionalCriarComponent },
+  { path: 'profissional/editar/:id', component: ProfissionalEditarComponent },
+  { path: 'profissional/exluir/:id', component: ProfissionalExcluirComponent }
 ];
 
 @NgModule({
