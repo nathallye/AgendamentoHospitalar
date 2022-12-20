@@ -23,6 +23,18 @@ builder.Services.AddCors(options =>
 });
 
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("MinhaRegraCors",
+        policy =>
+        {
+            policy.AllowAnyHeader()
+            .AllowAnyOrigin()
+            .AllowAnyMethod();
+
+        });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,6 +45,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("MinhaRegraCors");
 
 app.UseAuthorization();
 
