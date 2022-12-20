@@ -1,7 +1,7 @@
-﻿using AgendamentoHospitalar.Dto.Hospital;
+﻿using AgendamentoHospitalar.Dto.Beneficiario;
+using AgendamentoHospitalar.Dto.Hospital;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
-
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendamentoHospitalar.Controllers
@@ -37,6 +37,48 @@ namespace AgendamentoHospitalar.Controllers
                 }
 
                 return Ok(lista);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("ListarPorId/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Hospital))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult ListarPorId(int id)
+        {
+            if (id < 1)
+                return NoContent();
+
+            try
+            {
+                HospitalDto hospital = _hospitalRepository.ListarPorId(id);
+
+                if (hospital == null)
+                    return NoContent();
+
+                return Ok(hospital);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost]
+        [Route("Criar")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Hospital))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Criar(HospitalCriarDto novoHospital)
+        {
+            try
+            {
+                Hospital hospitalEntidade = _hospitalRepository.Criar(novoHospital);
+
+                return Ok(hospitalEntidade);
             }
             catch (Exception ex)
             {
