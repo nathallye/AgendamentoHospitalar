@@ -20,7 +20,7 @@ public partial class Profissional
     public string? Telefone { get; set; }
 
     [Unicode(false)]
-    public string? Endereço { get; set; }
+    public string? Endereco { get; set; }
 
     public bool Ativo { get; set; }
 
