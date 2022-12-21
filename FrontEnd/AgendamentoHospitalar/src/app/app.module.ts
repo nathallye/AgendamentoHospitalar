@@ -6,8 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from "./header/header.component";
-import { HomeComponent } from './home/home.component';
+import { HeaderComponent } from "./templates/header/header.component";
 import { FooterComponent } from './templates/footer/footer.component';
 
 import { CriarAgendamentoconfigComponent } from './components/agendamentoconfig/criar-agendamentoconfig/criar-agendamentoconfig.component';
@@ -40,7 +39,6 @@ import { HospitalEditarComponent } from './hospital-editar/hospital-editar.compo
 import { HospitalDetalheComponent } from './hospital-detalhe/hospital-detalhe.component';
 import { HospitalCriarComponent } from './hospital-criar/hospital-criar.component';
 
-
 @NgModule({
     declarations: [
         AppComponent,
@@ -70,8 +68,7 @@ import { HospitalCriarComponent } from './hospital-criar/hospital-criar.componen
         HospitalExcluirComponent,
         HospitalEditarComponent,
         HospitalDetalheComponent,
-        HospitalCriarComponent,
-        HomeComponent
+        HospitalCriarComponent
     ],
     imports: [
         BrowserModule,
