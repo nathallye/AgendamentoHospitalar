@@ -7,9 +7,15 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddDbContext<AgendamentoHospitalar.Repository.Context.DatabaseContext>();
+
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IBeneficiarioRepository, AgendamentoHospitalar.Repository.BeneficiarioRepository>();
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IHospitalRepository, AgendamentoHospitalar.Repository.HospitalRepository>();
+
+// CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("MinhaRegraCors",
+    options.AddPolicy("MyRuleCors",
         policy =>
         {
             policy.AllowAnyHeader()
@@ -27,6 +33,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors("MyRuleCors");
 
 app.UseHttpsRedirection();
 
