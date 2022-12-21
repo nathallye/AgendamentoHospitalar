@@ -1,0 +1,34 @@
+<div>
+  <div class="card">
+    <p class="d-flex justify-content-end">
+      <button class="btn btn-secondary" (click)="criar()">Criar</button>
+    </p>
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Lista Especialidades</h4>
+    </div>
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th>Descrição</th>
+          <th>Ativo<th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let especialidadeItem of EspecialidadesLista ">
+          <td>{{especialidadeItem.idEspecialidade}}</td>
+          <td>{{especialidadeItem.nome}}</td>
+          <td>{{especialidadeItem.descricao}}</td>
+          <td>{{especialidadeItem.ativo}}</td>
+          <td>
+            <i class="material-icons" (click)="excluir(especialidadeItem.idEspecialidade)">delete</i>
+            <i class="material-icons" (click)="editar(especialidadeItem.idEspecialidade)">edit</i>
+            <i class="material-icons" (click)="listarPorId(especialidadeItem.idEspecialidade)" >visibility</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

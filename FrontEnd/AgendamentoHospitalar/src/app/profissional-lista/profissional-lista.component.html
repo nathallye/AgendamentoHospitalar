@@ -1,0 +1,38 @@
+<div>
+  <div class="card">
+
+    <p>
+      <button (click)="criar()">Criar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Lista Profissionais</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Ativo</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let profissionalItem of listaProfissional">
+          <td>{{profissionalItem.nome}}</td>
+          <td>{{profissionalItem.telefone}}</td>
+          <td>{{profissionalItem.endereco}}</td>
+          <td>{{profissionalItem.ativo}}</td>
+          <td>
+            <i (click)="excluir(profissionalItem.idProfissional)" class="material-icons">delete</i>
+            <i (click)="editar(profissionalItem.idProfissional)" class="material-icons">edit</i>
+            <i (click)="listarPorId(profissionalItem.idProfissional)" class="material-icons">visibility</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

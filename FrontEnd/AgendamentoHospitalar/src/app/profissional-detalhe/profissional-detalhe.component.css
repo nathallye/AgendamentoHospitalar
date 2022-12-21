@@ -1,0 +1,47 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+div .card {
+  background: #f4f4f4;
+
+  margin: 4em auto;
+  padding: 2em 3em;
+  max-width: 100em;
+  position: relative;
+  overflow: hidden;
+}
+
+.card h4 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 0.5em;
+
+  font-family: "Raleway";
+  color: white;
+}
+
+.card thead {
+  font-family: "Raleway";
+  color: white;
+}
+
+.card tbody {
+  font-family: "Raleway";
+}
+
+div p button {
+  background-color: #6c757d;
+
+  width: 5em;
+  height: 2em;
+  border: none;
+  border-radius: 0.5em;
+
+  color: #f4f4f4;
+
+  cursor: pointer;
+}

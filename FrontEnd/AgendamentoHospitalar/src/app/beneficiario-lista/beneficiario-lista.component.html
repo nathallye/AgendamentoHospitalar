@@ -1,0 +1,45 @@
+<div>
+  <div class="card">
+
+    <p>
+      <button (click)="criar()">Criar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Lista Beneficiários</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Nome</th>
+          <th>CPF</th>
+          <th>Numero Carteirinha</th>
+          <th>Telefone</th>
+          <th>E-mail</th>
+          <th>Endereço</th>
+          <th>Ativo</th>
+          <th></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr *ngFor="let beneficiarioItem of listaBeneficiarios">
+          <td>{{beneficiarioItem.nome}}</td>
+          <td>{{beneficiarioItem.cpf}}</td>
+          <td>{{beneficiarioItem.numeroCarteirinha}}</td>
+          <td>{{beneficiarioItem.telefone}}</td>
+          <td>{{beneficiarioItem.email}}</td>
+          <td>{{beneficiarioItem.endereco}}</td>
+          <td>{{beneficiarioItem.ativo}}</td>
+          <td>
+            <i (click)="excluir(beneficiarioItem.idBeneficiario)" class="material-icons">delete</i>
+            <i (click)="editar(beneficiarioItem.idBeneficiario)" class="material-icons">edit</i>
+            <i (click)="listarPorId(beneficiarioItem.idBeneficiario)" class="material-icons">visibility</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  

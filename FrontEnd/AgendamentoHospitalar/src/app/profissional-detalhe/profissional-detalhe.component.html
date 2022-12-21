@@ -1,0 +1,32 @@
+<div>
+  <div class="card" style="width: 100%;">
+
+    <p>
+      <button (click)="fechar()">Voltar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Dados de {{profissional.nome}}</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Nome</th>
+          <th>Telefone</th>
+          <th>Endereço</th>
+          <th>Ativo</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>{{profissional.nome}}</td>
+          <td>{{profissional.telefone}}</td>
+          <td>{{profissional.endereco}}</td>
+          <td>{{profissional.ativo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
