@@ -5,7 +5,7 @@ import { ProfissionalListaComponent } from './profissional-lista';
 import { ProfissionalDetalheComponent } from './profissional-detalhe';
 import { ProfissionalCriarComponent } from './profissional-criar';
 import { ProfissionalEditarComponent } from './profissional-editar';
-import { ProfissionalExcluirComponent } from './profissional-excluir/profissional-excluir.component';
+import { ProfissionalExcluirComponent } from './profissional-excluir';
 
 const routes: Routes = [
   { path: 'profissional', component: ProfissionalListaComponent },
