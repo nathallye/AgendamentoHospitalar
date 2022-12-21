@@ -13,5 +13,6 @@ namespace AgendamentoHospitalar.Interfaces
         int Atualizar(EspecialidadeDTO cadastrarDto);
 
         int Excluir(int Id);
+
     }
 }

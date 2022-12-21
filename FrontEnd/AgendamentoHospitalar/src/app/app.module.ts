@@ -11,6 +11,11 @@ import { HeaderComponent } from "./templates/header/header.component";
 import { EditarEspecialidadeComponent } from './components/especialidades/editar-especialidade/editar-especialidade.component';
 import { DetalheEspecialidadeComponent } from './components/especialidades/detalhe-especialidade/detalhe-especialidade.component';
 import { ExcluirEspecialidadeComponent } from './components/especialidades/excluir-especialidade/excluir-especialidade.component';
+import { CriarAgendamentoconfigComponent } from './components/agendamentoconfig/criar-agendamentoconfig/criar-agendamentoconfig.component';
+import { DetalheAgendamentoconfigComponent } from './components/agendamentoconfig/detalhe-agendamentoconfig/detalhe-agendamentoconfig.component';
+import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig/excluir-agendamentoconfig.component';
+import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig/listar-agendamentoconfig.component';
+import { EditarAgendamentoconfigComponent } from './components/agendamentoconfig/editar-agendamentoconfig/editar-agendamentoconfig.component';
 
 @NgModule({
     declarations: [
@@ -21,7 +26,12 @@ import { ExcluirEspecialidadeComponent } from './components/especialidades/exclu
         CriarEspecialidadeComponent,
         EditarEspecialidadeComponent,
         DetalheEspecialidadeComponent,
-        ExcluirEspecialidadeComponent
+        ExcluirEspecialidadeComponent,
+        CriarAgendamentoconfigComponent,
+        DetalheAgendamentoconfigComponent,
+        ExcluirAgendamentoconfigComponent,
+        ListarAgendamentoconfigComponent,
+        EditarAgendamentoconfigComponent
     ],
     providers: [],
     bootstrap: [AppComponent],

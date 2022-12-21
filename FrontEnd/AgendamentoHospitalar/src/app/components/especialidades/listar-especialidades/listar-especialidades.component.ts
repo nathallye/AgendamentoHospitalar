@@ -25,13 +25,13 @@ export class ListarEspecialidadesComponent {
     )
     .subscribe(data=>{
       for(let i =0; i<data.length;i++){
-        let newEspecialidade:IEspecialidadeDTO = {
+        let novaEspecialidade:IEspecialidadeDTO = {
           ativo: data[i].ativo,
           descricao: data[i].descrição,
           nome: data[i].nome,
           idEspecialidade: data[i].idEspecialidade
         }
-        this.EspecialidadesLista.push(newEspecialidade)
+        this.EspecialidadesLista.push(novaEspecialidade)
       }
     })
   }

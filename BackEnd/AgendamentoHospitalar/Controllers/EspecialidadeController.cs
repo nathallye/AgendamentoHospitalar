@@ -36,6 +36,7 @@ namespace AgendamentoHospitalar.Controllers
             }
         }
 
+ 
         [HttpGet]
         [Route("/ListarEspecialidades")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
