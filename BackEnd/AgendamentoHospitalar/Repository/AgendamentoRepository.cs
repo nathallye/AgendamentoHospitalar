@@ -94,5 +94,16 @@ namespace AgendamentoHospitalar.Repository
             _context.SaveChanges();
             return agendamentoEntidade;
         }
+
+        public int Excluir(int id)
+        {
+            var agendamento = new Agendamento()
+            {
+                IdAgendamento = id
+            };
+
+            _context.Agendamentos.Remove(agendamento);
+            return _context.SaveChanges();
+        }
     }
 }
