@@ -104,5 +104,22 @@ namespace AgendamentoHospitalar.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpDelete]
+        [Route("Excluir/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Excluir(int id)
+        {
+            try
+            {
+                int linhasRetornadas = _agendamentoRepository.Excluir(id);
+                return Ok(linhasRetornadas);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

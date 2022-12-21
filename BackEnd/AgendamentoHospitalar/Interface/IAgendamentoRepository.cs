@@ -9,5 +9,6 @@ namespace AgendamentoHospitalar.Interface
         AgendamentoDto ListarPorId(int id);
         Agendamento Criar(AgendamentoCriarDto agendamento);
         Agendamento Atualizar(AgendamentoAtualizarDto agendamento);
+        int Excluir(int id);
     }
 }
