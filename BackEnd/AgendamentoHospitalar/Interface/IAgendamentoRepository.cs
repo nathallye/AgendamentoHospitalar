@@ -1,4 +1,5 @@
 ﻿using AgendamentoHospitalar.Dto.Agendamento;
+using AgendamentoHospitalar.Entidade;
 
 namespace AgendamentoHospitalar.Interface
 {
@@ -6,5 +7,8 @@ namespace AgendamentoHospitalar.Interface
     {
         List<AgendamentoDto> ListarTodos();
         AgendamentoDto ListarPorId(int id);
+        Agendamento Criar(AgendamentoCriarDto agendamento);
+        Agendamento Atualizar(AgendamentoAtualizarDto agendamento);
+        int Excluir(int id);
     }
 }

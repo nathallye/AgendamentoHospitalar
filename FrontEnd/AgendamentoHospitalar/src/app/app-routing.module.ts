@@ -30,6 +30,7 @@ import { HospitalExcluirComponent } from './hospital-excluir/hospital-excluir.co
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
 
 const routes: Routes = [
   {path:'agendamentoconfig', component:ListarAgendamentoconfigComponent},
@@ -60,7 +61,9 @@ const routes: Routes = [
   { path: 'hospital/listarporid/:id', component: HospitalDetalheComponent },
   { path: 'hospital/criar', component: HospitalCriarComponent },
   { path: 'hospital/editar/:id', component: HospitalEditarComponent },
-  { path: 'hospital/exluir/:id', component: HospitalExcluirComponent }
+  { path: 'hospital/exluir/:id', component: HospitalExcluirComponent },
+
+  { path: 'agendamentos/listartodos', component: AgendamentoListaComponent }
 ];
 
 @NgModule({

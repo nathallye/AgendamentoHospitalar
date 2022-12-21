@@ -67,5 +67,59 @@ namespace AgendamentoHospitalar.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
+        [HttpPost]
+        [Route("Criar")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Agendamento))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Criar(AgendamentoCriarDto novoAgendamento)
+        {
+            try
+            {
+                Agendamento agendamentoEntidade = _agendamentoRepository.Criar(novoAgendamento);
+
+                return Ok(agendamentoEntidade);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPut]
+        [Route("Atualizar/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Agendamento))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Atualizar(AgendamentoAtualizarDto agendamento)
+        {
+            try
+            {
+                Agendamento agendamentoEntidade = _agendamentoRepository.Atualizar(agendamento);
+
+                return Ok(agendamentoEntidade);
+
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        [Route("Excluir/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult Excluir(int id)
+        {
+            try
+            {
+                int linhasRetornadas = _agendamentoRepository.Excluir(id);
+                return Ok(linhasRetornadas);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
     }
 }

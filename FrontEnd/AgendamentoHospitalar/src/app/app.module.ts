@@ -39,6 +39,10 @@ import { HospitalEditarComponent } from './hospital-editar/hospital-editar.compo
 import { HospitalDetalheComponent } from './hospital-detalhe/hospital-detalhe.component';
 import { HospitalCriarComponent } from './hospital-criar/hospital-criar.component';
 
+import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
+//import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
+//import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -68,15 +72,17 @@ import { HospitalCriarComponent } from './hospital-criar/hospital-criar.componen
         HospitalExcluirComponent,
         HospitalEditarComponent,
         HospitalDetalheComponent,
-        HospitalCriarComponent
+        HospitalCriarComponent,
+        AgendamentoListaComponent,
+        //AgendamentoDetalheComponent,
+        //AgendamentoCriarComponent
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        BrowserAnimationsModule,
-        HttpClientModule
+        BrowserAnimationsModule
     ],
     providers: [],
     bootstrap: [AppComponent]
