@@ -1,0 +1,42 @@
+<div>
+  <div class="card">
+
+    <p>
+      <button (click)="criar()">Criar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Lista Hospitais</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Nome</th>
+          <th>CNPJ</th>
+          <th>Endereço</th>
+          <th>Telefone</th>
+          <th>CNES</th>
+          <th>Ativo</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let hospitalItem of listaHospital">
+          <td>{{hospitalItem.nome}}</td>
+          <td>{{hospitalItem.cnpj}}</td>
+          <td>{{hospitalItem.endereco}}</td>
+          <td>{{hospitalItem.telefone}}</td>
+          <td>{{hospitalItem.cnes}}</td>
+          <td>{{hospitalItem.ativo}}</td>
+          <td>
+            <i (click)="excluir(hospitalItem.idHospital)" class="material-icons">delete</i>
+            <i (click)="editar(hospitalItem.idHospital)" class="material-icons">edit</i>
+            <i (click)="listarPorId(hospitalItem.idHospital)" class="material-icons">visibility</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

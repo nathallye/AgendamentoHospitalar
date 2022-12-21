@@ -1,0 +1,54 @@
+<div class="form-group">
+  <form>
+    <h4>Atualizar Hospital</h4>
+    <hr />
+
+    <div class="container">
+      <div class="mb-3 row">
+        <label for="nomeHospital" class="col-sm-4 col-form-label">Nome</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="nomeHospital" [(ngModel)]="hospital.nome" name="nomeHospital">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="cpf" class="col-sm-4 col-form-label">CNPJ</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="cnpj" [(ngModel)]="hospital.cnpj" name="cnpj">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="endereco" class="col-sm-4 col-form-label">Endereço</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="endereco" [(ngModel)]="hospital.endereco" name="endereco">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="telefone" class="col-sm-4 col-form-label">Telefone</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="telefone" [(ngModel)]="hospital.telefone" name="telefone">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="cnes" class="col-sm-4 col-form-label">CNES</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="matriculation" [(ngModel)]="hospital.cnes" name="cnes">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="ativo" class="col-sm-4 col-form-label">Ativo</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="ativo" [(ngModel)]="hospital.ativo" name="ativo">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <button (click)="salvar()" class="save">Salvar</button>
+        <button (click)="sair()">Fechar</button>
+      </div>
+    </div>
+  </form>
+</div>
