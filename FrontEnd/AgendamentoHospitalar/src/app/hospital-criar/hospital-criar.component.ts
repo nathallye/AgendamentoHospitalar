@@ -35,7 +35,7 @@ export class HospitalCriarComponent {
     if (this.validarInformacoes()) {
       if (this.hospital.idHospital == 0) {
 
-        this.http.post('https://localhost:7275/api/Hospital/Criar', this.hospital)
+        this.http.post('https://localhost:7275/api/Hospitais/Criar', this.hospital)
           .subscribe((data) => {
             this.router.navigate(['hospital/listartodos']);
           });

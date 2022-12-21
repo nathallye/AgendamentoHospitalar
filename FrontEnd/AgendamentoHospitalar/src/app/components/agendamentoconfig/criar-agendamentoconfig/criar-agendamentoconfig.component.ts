@@ -1,3 +1,5 @@
+import { IHospitalDto } from './../../../interfaces/IHospitalDto';
+import { IProfissionalDto } from './../../../interfaces/IProfissionalDto';
 import { ListarEspecialidadesComponent } from './../../especialidades/listar-especialidades/listar-especialidades.component';
 import IEspecialidadeDTO  from 'src/app/interfaces/IEspecialidadeDTO';
 import IAgendamentoConfiguracaoDTO  from 'src/app/interfaces/IAgendamentoConfiguracaoDTO';
@@ -13,6 +15,8 @@ import { map } from 'rxjs';
 })
 export class CriarAgendamentoconfigComponent {
   listaEspecialidades:IEspecialidadeDTO[] = [];
+  listaProfissionais:IProfissionalDto[] = [];
+  listaHospitais:IHospitalDto[] = [];
   novoAgendamentoConfig :IAgendamentoConfiguracaoDTO = {
   dataHoraFinalAtendimento : new Date(),
   dataHoraInicioAtendimento: new Date(),
