@@ -1,0 +1,26 @@
+<form class="mt-3">
+  <div class="form-group">
+    <label for="nameInput">Medico</label>
+    <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novoAgendamentoConfig.idProfissional">
+      <option selected>Selecione uma opção</option>
+      <option *ngFor="let item of listaEspecialidades">Ativo</option>
+      <option value="false">Inativo</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nameInput">Hospital</label>
+    <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novoAgendamentoConfig.idHospital">
+      <option selected>Selecione uma opção</option>
+      <option *ngFor="let item of listaEspecialidades">Ativo</option>
+      <option value="false">Inativo</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="nameInput">Especialidade</label>
+    <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novoAgendamentoConfig.idEspecialidade">
+      <option selected>Selecione uma opção</option>
+      <option *ngFor="let item of listaEspecialidades">{{item.nome}}</option>
+    </select>
+  </div>
+  <button (click)="cadastrar()" class="btn btn-primary mt-3 mb-5">Cadastrar</button>
+</form>

@@ -1,0 +1,38 @@
+<div>
+  <div class="card">
+    <p class="d-flex justify-content-end">
+      <button class="btn btn-secondary" (click)="criar()">Criar</button>
+    </p>
+    <div class="card-header bg-dark">
+      <h4 class="card-title text-white ">Lista AgendamentoConfig</h4>
+    </div>
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Id</th>
+          <th>IdHospital</th>
+          <th>IdEspecialidade</th>
+          <th>IdProfissional<th>
+          <th>Data/Hora Inicio</th>
+          <th>Data/Hora Final</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let especialidadeItem of agendamentoConfigLista ">
+          <td>{{especialidadeItem.idConfiguracao}}</td>
+          <td>{{especialidadeItem.idHospital}}</td>
+          <td>{{especialidadeItem.idEspecialidade}}</td>
+          <td>{{especialidadeItem.idProfissional}}</td>
+          <td>{{especialidadeItem.dataHoraInicioAtendimento}}</td>
+          <td>{{especialidadeItem.dataHoraFinalAtendimento}}</td>
+          <td>
+            <i class="material-icons" (click)="excluir(especialidadeItem.idEspecialidade)">delete</i>
+            <i class="material-icons" (click)="editar(especialidadeItem.idEspecialidade)">edit</i>
+            <i class="material-icons" (click)="listarPorId(especialidadeItem.idEspecialidade)" >visibility</i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

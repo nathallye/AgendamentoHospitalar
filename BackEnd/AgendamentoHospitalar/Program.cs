@@ -38,6 +38,8 @@ app.UseCors("MyRuleCors");
 
 app.UseHttpsRedirection();
 
+app.UseCors("MinhaRegraCors");
+
 app.UseAuthorization();
 
 app.MapControllers();
