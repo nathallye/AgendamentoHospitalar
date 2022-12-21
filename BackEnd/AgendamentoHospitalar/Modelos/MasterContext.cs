@@ -161,7 +161,7 @@ public partial class MasterContext : DbContext
 
             entity.ToTable("Especialidade");
 
-            entity.Property(e => e.Descrição).IsUnicode(false);
+            entity.Property(e => e.Descricao).IsUnicode(false);
             entity.Property(e => e.Nome)
                 .HasMaxLength(100)
                 .IsUnicode(false);
@@ -182,7 +182,7 @@ public partial class MasterContext : DbContext
                 .HasMaxLength(25)
                 .IsUnicode(false)
                 .HasColumnName("CNPJ");
-            entity.Property(e => e.Endereço).IsUnicode(false);
+            entity.Property(e => e.Endereco).IsUnicode(false);
             entity.Property(e => e.Nome).IsUnicode(false);
             entity.Property(e => e.Telefone)
                 .HasMaxLength(15)
@@ -195,7 +195,7 @@ public partial class MasterContext : DbContext
 
             entity.ToTable("Profissional");
 
-            entity.Property(e => e.Endereço).IsUnicode(false);
+            entity.Property(e => e.Endereco).IsUnicode(false);
             entity.Property(e => e.Nome).IsUnicode(false);
             entity.Property(e => e.Telefone)
                 .HasMaxLength(15)

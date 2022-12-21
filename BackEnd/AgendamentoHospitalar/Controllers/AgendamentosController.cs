@@ -1,4 +1,4 @@
-﻿using AgendamentoHospitalar.Dto.Hospital;
+﻿using AgendamentoHospitalar.Dto.Agendamento;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
 using AgendamentoHospitalar.Repository;
@@ -8,24 +8,24 @@ namespace AgendamentoHospitalar.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class HospitaisController : Controller
+    public class AgendamentosController : Controller
     {
-        public readonly IHospitalRepository _hospitalRepository;
+        private readonly IAgendamentoRepository _agendamentoRepository;
 
-        public HospitaisController(IHospitalRepository hospitalRepository)
+        public AgendamentosController(IAgendamentoRepository agendamentoRepository)
         {
-            _hospitalRepository = hospitalRepository;
+            _agendamentoRepository = agendamentoRepository;
         }
 
         [HttpGet]
         [Route("ListarTodos")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Hospital>))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<Agendamento>))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult ListarTodos()
         {
             try
             {
-                List<HospitalDto> lista = _hospitalRepository.ListarTodos();
+                List<AgendamentoDto> lista = _agendamentoRepository.ListarTodos();
                 if (lista == null)
                 {
                     return NoContent();
@@ -46,7 +46,7 @@ namespace AgendamentoHospitalar.Controllers
 
         [HttpGet]
         [Route("ListarPorId/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Hospital))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Agendamento))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public IActionResult ListarPorId(int id)
         {
@@ -55,12 +55,12 @@ namespace AgendamentoHospitalar.Controllers
 
             try
             {
-                HospitalDto hospital = _hospitalRepository.ListarPorId(id);
+                AgendamentoDto agendamento = _agendamentoRepository.ListarPorId(id);
 
-                if (hospital == null)
+                if (agendamento == null)
                     return NoContent();
 
-                return Ok(hospital);
+                return Ok(agendamento);
             }
             catch (Exception ex)
             {
@@ -70,15 +70,15 @@ namespace AgendamentoHospitalar.Controllers
 
         [HttpPost]
         [Route("Criar")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Hospital))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Agendamento))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Criar(HospitalCriarDto novoHospital)
+        public IActionResult Criar(AgendamentoCriarDto novoAgendamento)
         {
             try
             {
-                Hospital hospitalEntidade = _hospitalRepository.Criar(novoHospital);
+                Agendamento agendamentoEntidade = _agendamentoRepository.Criar(novoAgendamento);
 
-                return Ok(hospitalEntidade);
+                return Ok(agendamentoEntidade);
             }
             catch (Exception ex)
             {
@@ -86,17 +86,17 @@ namespace AgendamentoHospitalar.Controllers
             }
         }
 
-        [HttpPatch]
+        [HttpPut]
         [Route("Atualizar/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Hospital))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Agendamento))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Atualizar(HospitalAtualizarDto hospital)
+        public IActionResult Atualizar(AgendamentoAtualizarDto agendamento)
         {
             try
             {
-                Hospital hospitalEntidade = _hospitalRepository.Atualizar(hospital);
+                Agendamento agendamentoEntidade = _agendamentoRepository.Atualizar(agendamento);
 
-                return Ok(hospitalEntidade);
+                return Ok(agendamentoEntidade);
 
             }
             catch (Exception ex)
@@ -113,7 +113,7 @@ namespace AgendamentoHospitalar.Controllers
         {
             try
             {
-                int linhasRetornadas = _hospitalRepository.Excluir(id);
+                int linhasRetornadas = _agendamentoRepository.Excluir(id);
                 return Ok(linhasRetornadas);
             }
             catch (Exception ex)

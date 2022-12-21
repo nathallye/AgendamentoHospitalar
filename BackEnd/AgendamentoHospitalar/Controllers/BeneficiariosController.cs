@@ -95,7 +95,7 @@ namespace AgendamentoHospitalar.Controllers
         [Route("Atualizar/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Beneficiario))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Update(BeneficiarioAtualizarDto beneficiario)
+        public IActionResult Atualizar(BeneficiarioAtualizarDto beneficiario)
         {
             try
             {
