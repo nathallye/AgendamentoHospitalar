@@ -20,9 +20,13 @@ namespace AgendamentoHospitalar.Repository
             {
                 IdAgendamento = s.IdAgendamento,
                 IdBeneficiario = s.IdBeneficiario,
+                IdBeneficiarioNavigation = s.IdBeneficiarioNavigation,
                 IdHospital = s.IdHospital,
+                IdHospitalNavigation = s.IdHospitalNavigation,
                 IdEspecialidade = s.IdEspecialidade,
+                IdEspecialidadeNavigation = s.IdEspecialidadeNavigation,
                 IdProfissional = s.IdProfissional,
+                IdProfissionalNavigation = s.IdProfissionalNavigation,
                 DataHoraAgendamento = s.DataHoraAgendamento,
                 Ativo = s.Ativo
             }).ToList();
@@ -36,9 +40,13 @@ namespace AgendamentoHospitalar.Repository
                     {
                         IdAgendamento = t.IdAgendamento,
                         IdBeneficiario = t.IdBeneficiario,
+                        IdBeneficiarioNavigation = t.IdBeneficiarioNavigation,
                         IdHospital = t.IdHospital,
+                        IdHospitalNavigation = t.IdHospitalNavigation,
                         IdEspecialidade = t.IdEspecialidade,
+                        IdEspecialidadeNavigation = t.IdEspecialidadeNavigation,
                         IdProfissional = t.IdProfissional,
+                        IdProfissionalNavigation = t.IdProfissionalNavigation,
                         DataHoraAgendamento = t.DataHoraAgendamento,
                         Ativo = t.Ativo
                     })
