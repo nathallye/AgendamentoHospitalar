@@ -1,0 +1,36 @@
+<div>
+  <div class="card" style="width: 100%;">
+
+    <p>
+      <button (click)="fechar()">Voltar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Dados de {{hospital.nome}}</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+        <th>Nome</th>
+        <th>CNPJ</th>
+        <th>Endereço</th>
+        <th>Telefone</th>
+        <th>CNES</th>
+        <th>Ativo</th>
+      </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>{{hospital.nome}}</td>
+          <td>{{hospital.cnpj}}</td>
+          <td>{{hospital.endereco}}</td>
+          <td>{{hospital.telefone}}</td>
+          <td>{{hospital.cnes}}</td>
+          <td>{{hospital.ativo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
