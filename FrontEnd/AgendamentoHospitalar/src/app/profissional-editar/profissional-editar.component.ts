@@ -5,7 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IProfissionalDto } from '../interfaces/IProfissionalDto';
 
 @Component({
-  selector: 'app-profissionais-editar',
+  selector: 'app-profissional-editar',
   templateUrl: './profissional-editar.component.html',
   styleUrls: ['./profissional-editar.component.css']
 })
@@ -66,6 +66,6 @@ export class ProfissionalEditarComponent {
   }
 
   sair() {
-    this.router.navigate(['profissional/listartodos']);
+    this.router.navigate(['profissional']);
   }
 }
