@@ -1,5 +1,4 @@
-﻿using AgendamentoHospitalar.Dto.Beneficiario;
-using AgendamentoHospitalar.Dto.Hospital;
+﻿using AgendamentoHospitalar.Dto.Hospital;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
 using AgendamentoHospitalar.Repository;
