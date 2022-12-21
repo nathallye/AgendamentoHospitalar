@@ -23,7 +23,7 @@ Item: any;
     this.listaHospital = [];
 
     this.http
-      .get('https://localhost:7275/api/Hospital/ListarTodos')
+      .get('https://localhost:7275/api/Hospitais/ListarTodos')
       .pipe(
         map((response: any) => {
           return Object.values(response);
