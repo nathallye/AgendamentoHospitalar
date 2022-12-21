@@ -1,32 +1,29 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Microsoft.EntityFrameworkCore;
 
-namespace AgendamentoHospitalar.Entidade
+namespace AgendamentoHospitalar.Entidade;
+
+[Table("Especialidade")]
+public partial class Especialidade
 {
-    [Table("Especialidade")]
-    public partial class Especialidade
-    {
-        public Especialidade()
-        {
-            AgendamentoConfiguracaos = new HashSet<AgendamentoConfiguracao>();
-            Agendamentos = new HashSet<Agendamento>();
-        }
+    [Key]
+    public int IdEspecialidade { get; set; }
 
-        [Key]
-        public int IdEspecialidade { get; set; }
-        [StringLength(100)]
-        [Unicode(false)]
-        public string Nome { get; set; } = null!;
-        [Unicode(false)]
-        public string? Descrição { get; set; }
-        public bool Ativo { get; set; }
+    [StringLength(100)]
+    [Unicode(false)]
+    public string Nome { get; set; } = null!;
 
-        [InverseProperty("IdEspecialidadeNavigation")]
-        public virtual ICollection<AgendamentoConfiguracao> AgendamentoConfiguracaos { get; set; }
-        [InverseProperty("IdEspecialidadeNavigation")]
-        public virtual ICollection<Agendamento> Agendamentos { get; set; }
-    }
+    [Unicode(false)]
+    public string? Descrição { get; set; }
+
+    public bool Ativo { get; set; }
+
+    [InverseProperty("IdEspecialidadeNavigation")]
+    public virtual ICollection<AgendamentoConfiguracao> AgendamentoConfiguracaos { get; } = new List<AgendamentoConfiguracao>();
+
+    [InverseProperty("IdEspecialidadeNavigation")]
+    public virtual ICollection<Agendamento> Agendamentos { get; } = new List<Agendamento>();
 }

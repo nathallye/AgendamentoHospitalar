@@ -1,0 +1,62 @@
+<div class="form-group">
+  <form>
+    <h4>Atualizar Beneficiário</h4>
+    <hr />
+
+    <div class="container">
+      <div class="mb-3 row">
+        <label for="nomeBeneficiario" class="col-sm-4 col-form-label">Nome</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="nomeBeneficiario" [(ngModel)]="beneficiario.nome" name="nomeBeneficiario">
+        </div>
+      </div>
+      <div class="mb-3 row">
+        <label for="cpf" class="col-sm-4 col-form-label">CPF</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="cpf" [(ngModel)]="beneficiario.cpf" name="cpf">
+        </div>
+      </div>
+  
+      <div class="mb-3 row">
+        <label for="numeroCarteirinha" class="col-sm-4 col-form-label">Número Carteirinha</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="numeroCarteirinha" [(ngModel)]="beneficiario.numeroCarteirinha" name="numeroCarteirinha">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="telefone" class="col-sm-4 col-form-label">Telefone</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="telefone" [(ngModel)]="beneficiario.telefone" name="telefone">
+        </div>
+      </div>
+  
+      <div class="mb-3 row">
+        <label for="email" class="col-sm-4 col-form-label">E-mail</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="matriculation" [(ngModel)]="beneficiario.email" name="email">
+        </div>
+      </div>
+  
+      <div class="mb-3 row">
+        <label for="endereco" class="col-sm-4 col-form-label">Endereço</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="endereco" [(ngModel)]="beneficiario.endereco" name="endereco">
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="ativo" class="col-sm-4 col-form-label">Ativo</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" id="ativo" [(ngModel)]="beneficiario.ativo" name="ativo">
+        </div>
+      </div>
+  
+      <div class="mb-3 row">
+        <button (click)="salvar()" class="save">Salvar</button>
+        <button (click)="sair()">Fechar</button>
+      </div>
+    </div>
+  </form>
+</div>
+
