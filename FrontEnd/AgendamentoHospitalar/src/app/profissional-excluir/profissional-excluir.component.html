@@ -1,0 +1,36 @@
+<div class="detail-group">
+  <div class="container">
+
+    <div class="title">
+      <h4>Excluir Profissional</h4>
+      <h4 class="text-danger">Tem certeza de que deseja excluir?</h4>
+    </div>
+
+    <div class="detail">
+      <dl>
+        <dt>Nome: </dt>
+        <dd>{{profissional.nome}}</dd>
+      </dl>
+
+      <dl>
+        <dt>Telefone:</dt>
+        <dd>{{profissional.telefone}}</dd>
+      </dl>
+
+      <dl>
+        <dt>Endereço:</dt>
+        <dd>{{profissional.endereco}}</dd>
+      </dl>
+
+      <dl>
+        <dt>Ativo:</dt>
+        <dd>{{profissional.ativo}}</dd>
+      </dl>
+    </div>
+
+    <div class="mb-3 row">
+      <button (click)="apagar()" class="exclude">Excluir</button>
+      <button (click)="sair()">Fechar</button>
+    </div>
+  </div>
+</div>

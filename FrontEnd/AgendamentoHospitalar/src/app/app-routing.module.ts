@@ -16,6 +16,12 @@ import { BeneficiarioCriarComponent } from './beneficiario-criar';
 import { BeneficiarioEditarComponent } from './beneficiario-editar/beneficiario-editar.component';
 import { BeneficiarioExcluirComponent } from './beneficiario-excluir/beneficiario-excluir.component';
 
+import { ProfissionalListaComponent } from './profissional-lista';
+import { ProfissionalDetalheComponent } from './profissional-detalhe';
+import { ProfissionalCriarComponent } from './profissional-criar';
+import { ProfissionalEditarComponent } from './profissional-editar';
+import { ProfissionalExcluirComponent } from './profissional-excluir';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -36,11 +42,18 @@ const routes: Routes = [
   { path: 'beneficiarios/listarporid/:id', component: BeneficiarioDetalheComponent },
   { path: 'beneficiarios/criar', component: BeneficiarioCriarComponent },
   { path: 'beneficiarios/editar/:id', component: BeneficiarioEditarComponent },
-  { path: 'beneficiarios/exluir/:id', component: BeneficiarioExcluirComponent }
+  { path: 'beneficiarios/exluir/:id', component: BeneficiarioExcluirComponent },
+  
+  { path: 'profissional', component: ProfissionalListaComponent },
+  { path: 'profissional/listarporid/:id', component: ProfissionalDetalheComponent },
+  { path: 'profissional/criar', component: ProfissionalCriarComponent },
+  { path: 'profissional/editar/:id', component: ProfissionalEditarComponent },
+  { path: 'profissional/exluir/:id', component: ProfissionalExcluirComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
