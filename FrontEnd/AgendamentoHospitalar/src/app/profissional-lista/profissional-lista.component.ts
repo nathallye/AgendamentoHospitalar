@@ -12,7 +12,6 @@ import { IProfissionalDto } from '../interfaces/IProfissionalDto';
 })
 export class ProfissionalListaComponent {
   listaProfissional: IProfissionalDto[] = [];
-  personSelected!: IProfissionalDto;
 
   constructor(private http: HttpClient, private router: Router) {
     this.listarTodos();

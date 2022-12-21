@@ -17,7 +17,7 @@ namespace AgendamentoHospitalar.Repositorio
             {
                 Nome = novaEspecialidadeDTO.Nome,
                 Ativo = novaEspecialidadeDTO.Ativo,
-                Descrição = novaEspecialidadeDTO.Descrição
+                Descricao = novaEspecialidadeDTO.Descricao
             };
             _contexto.Especialidades.Add(novaEspecialidade);
             return _contexto.SaveChanges();
@@ -30,7 +30,7 @@ namespace AgendamentoHospitalar.Repositorio
             {
                 Nome = s.Nome,
                 Ativo = s.Ativo,
-                Descrição = s.Descrição,
+                Descricao = s.Descricao,
                 IdEspecialidade= s.IdEspecialidade,
 
             }).ToList();
@@ -44,7 +44,7 @@ namespace AgendamentoHospitalar.Repositorio
                     select new EspecialidadeDTO()
                     {
                         Ativo= t.Ativo,
-                        Descrição = t.Descrição,
+                        Descricao = t.Descricao,
                         Nome = t.Nome,
                         IdEspecialidade = t.IdEspecialidade
                     })
@@ -74,7 +74,7 @@ namespace AgendamentoHospitalar.Repositorio
                 IdEspecialidade = especialidadeBanco.IdEspecialidade,
                 Nome = atualizacaodto.Nome,
                 Ativo = atualizacaodto.Ativo,
-                Descrição = atualizacaodto.Descrição
+                Descricao = atualizacaodto.Descricao
             };
 
             _contexto.ChangeTracker.Clear();

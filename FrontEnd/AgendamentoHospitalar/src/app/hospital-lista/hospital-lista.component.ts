@@ -12,8 +12,7 @@ import { IHospitalDto } from '../interfaces/IHospitalDto';
 })
 export class HospitalListaComponent {
   listaHospital: IHospitalDto[] = [];
-  personSelected!: IHospitalDto;
-Item: any;
+  Item: any;
 
   constructor(private http: HttpClient, private router: Router) {
     this.listarTodos();

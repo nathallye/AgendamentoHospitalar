@@ -1,0 +1,45 @@
+<div>
+  <div class="card">
+
+    <p>
+      <button>Criar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Lista Agendamentos</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Beneficiário</th>
+          <th>Hospital</th>
+          <th>Especialidade</th>
+          <th>Profissional</th>
+          <th>Data e Hora</th>
+          <th>Ativo</th>
+          <th></th>
+        </tr>
+      </thead>
+    
+      <tbody>
+        <tr *ngFor="let agendamentoItem of listaAgendamentos">
+          <td>{{agendamentoItem.idBeneficiarioNavigation.nome}}</td>
+          <td>{{agendamentoItem.idHospitalNavigation.nome}}</td>
+          <td>{{agendamentoItem.idEspecialidadeNavigation.nome}}</td>
+          <td>{{agendamentoItem.idProfissionalNavigation.nome}}</td>
+          <td>{{agendamentoItem.dataHoraAgendamento}}</td>
+          <td>{{agendamentoItem.ativo}}</td>
+          <td>
+            <!--
+            <i (click)="excluir(beneficiarioItem.idBeneficiario)" class="material-icons">delete</i>
+            <i (click)="editar(beneficiarioItem.idBeneficiario)" class="material-icons">edit</i>
+            <i (click)="listarPorId(beneficiarioItem.idBeneficiario)" class="material-icons">visibility</i>
+            -->
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  
