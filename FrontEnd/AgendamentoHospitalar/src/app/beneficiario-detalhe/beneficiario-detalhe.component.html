@@ -1,0 +1,39 @@
+<div>
+  <div class="card" style="width: 100%;">
+
+    <p>
+      <button (click)="fechar()">Voltar</button>
+    </p>
+
+    <div class="card-header bg-dark">
+      <h4 class="card-title">Dados de {{beneficiario.nome}}</h4>
+    </div>
+
+    <table class="table table-hover">
+      <thead class="bg-secondary text-white">
+        <tr>
+          <th>Nome</th>
+        <th>CPF</th>
+        <th>NumeroCarteirinha</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Endereço</th>
+        <th>Ativo</th>
+      </tr>
+      </thead>
+    
+      <tbody>
+        <tr>
+          <td>{{beneficiario.nome}}</td>
+          <td>{{beneficiario.cpf}}</td>
+          <td>{{beneficiario.numeroCarteirinha}}</td>
+          <td>{{beneficiario.telefone}}</td>
+          <td>{{beneficiario.email}}</td>
+          <td>{{beneficiario.endereco}}</td>
+          <td>{{beneficiario.ativo}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  
