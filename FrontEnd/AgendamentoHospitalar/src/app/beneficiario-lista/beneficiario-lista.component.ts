@@ -12,7 +12,6 @@ import { IBeneficiarioDto } from '../interfaces/IBeneficiarioDto';
 })
 export class BeneficiarioListaComponent {
   listaBeneficiarios: IBeneficiarioDto[] = [];
-  personSelected!: IBeneficiarioDto;
 
   constructor(private http: HttpClient, private router: Router) {
     this.listarTodos();
@@ -38,7 +37,6 @@ export class BeneficiarioListaComponent {
 
 
   listarPorId(id: number) {
-    console.log('herreeeeee');
     this.router.navigate([`beneficiarios/listarporid/${id}`]);
   }
 

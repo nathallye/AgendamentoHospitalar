@@ -1,4 +1,4 @@
-export default interface IEspecialidadeDTO {
+export default interface IAgendamentoConfiguracaoDTO {
   idConfiguracao: number;
   idHospital:number;
   idEspecialidade:number;
