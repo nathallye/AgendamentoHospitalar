@@ -2,4 +2,10 @@ nav a {
   font-family: "Raleway";
   color: white;
 }
+.navbar ul li a{
+  color: rgb(37, 37, 37);
+}
 
+.navbar ul li a:hover{
+  color: #4200FF;
+}
