@@ -22,7 +22,7 @@ public partial class Hospital
     public string? Cnpj { get; set; }
 
     [Unicode(false)]
-    public string? Endereço { get; set; }
+    public string? Endereco { get; set; }
 
     [StringLength(15)]
     [Unicode(false)]

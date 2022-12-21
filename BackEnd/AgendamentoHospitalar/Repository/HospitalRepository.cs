@@ -23,7 +23,7 @@ namespace AgendamentoHospitalar.Repository
                 Nome = s.Nome,
                 Cnpj = s.Cnpj,
                 Telefone = s.Telefone,
-                Endereco = s.Endereço,
+                Endereco = s.Endereco,
                 Cnes = s.Cnes,
                 Ativo = s.Ativo
             }).ToList();
@@ -39,7 +39,7 @@ namespace AgendamentoHospitalar.Repository
                         Nome = t.Nome,
                         Cnpj = t.Cnpj,
                         Telefone = t.Telefone,
-                        Endereco = t.Endereço,
+                        Endereco = t.Endereco,
                         Cnes = t.Cnes,
                         Ativo = t.Ativo
                     })
@@ -54,7 +54,7 @@ namespace AgendamentoHospitalar.Repository
                 Nome = hospital.Nome,
                 Cnpj = hospital.Cnpj,
                 Telefone = hospital.Telefone,
-                Endereço = hospital.Endereço,
+                Endereco = hospital.Endereco,
                 Cnes = hospital.Cnes,
                 Ativo = hospital.Ativo
             };
@@ -85,7 +85,7 @@ namespace AgendamentoHospitalar.Repository
                 Nome = (hospital.Nome != null ? hospital.Nome : hospitalEntidadeBD.Nome),
                 Cnpj = (hospital.Cnpj != null ? hospital.Cnpj : hospitalEntidadeBD.Cnpj),
                 Telefone = (hospital.Telefone != null ? hospital.Telefone : hospitalEntidadeBD.Telefone),
-                Endereço = (hospital.Endereço != null ? hospital.Endereço : hospitalEntidadeBD.Endereço),
+                Endereco = (hospital.Endereco != null ? hospital.Endereco : hospitalEntidadeBD.Endereco),
                 Cnes = (hospital.Cnes != null ? hospital.Cnes : hospitalEntidadeBD.Cnes),
                 Ativo = hospital.Ativo
             };
