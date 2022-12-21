@@ -34,7 +34,7 @@ public class ProfissionalRepository : IProfissionalRepository
                 IdProfissional = profissional.IdProfissional,
                 Nome = (profissional.Nome != null ? profissional.Nome : profissionalEntidadeBD.Nome),
                 Telefone = (profissional.Telefone != null ? profissional.Telefone : profissionalEntidadeBD.Telefone),
-                Endereço = (profissional.Endereco != null ? profissional.Endereco : profissionalEntidadeBD.Endereço),
+                Endereco = (profissional.Endereco != null ? profissional.Endereco : profissionalEntidadeBD.Endereco),
                 Ativo = profissional.Ativo,
 
             };
@@ -51,7 +51,7 @@ public class ProfissionalRepository : IProfissionalRepository
             {
                 Nome = profissional.Nome,
                 Telefone = profissional.Telefone,
-                Endereço = profissional.Endereco,
+                Endereco = profissional.Endereco,
                 Ativo = profissional.Ativo,
             };
 
@@ -81,7 +81,7 @@ public class ProfissionalRepository : IProfissionalRepository
                         IdProfissional = t.IdProfissional,
                         Nome = t.Nome,
                         Telefone = t.Telefone,
-                        Endereco = t.Endereço,
+                        Endereco = t.Endereco,
                         Ativo = t.Ativo,
 
                     })
@@ -96,7 +96,7 @@ public class ProfissionalRepository : IProfissionalRepository
                 IdProfissional = s.IdProfissional,
                 Nome = s.Nome,
                 Telefone = s.Telefone,
-                Endereco = s.Endereço,
+                Endereco = s.Endereco,
                 Ativo = s.Ativo,
             }).ToList();
         }
