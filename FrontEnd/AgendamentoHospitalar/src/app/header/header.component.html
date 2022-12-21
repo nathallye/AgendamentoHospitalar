@@ -1,11 +1,11 @@
 <header>
-  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark border-bottom box-shadow">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-secondary border-bottom box-shadow">
     <div class="container-fluid">
-      <img src="../../assets/images/logo.png" alt="">
+      <a [routerLink]="['list']" class="nav-link">Agendamento Hospitalar</a>
       <div class="navbar-collapse collapse d-sm-inline-flex">
         <ul class="navbar-nav flex-grow-1">
           <li class="nav-item">
-            <a [routerLink]="['home']" class="nav-link">Home</a>
+            <a [routerLink]="['principal']" class="nav-link">Home</a>
           </li>
           <li class="nav-item">
             <a [routerLink]="['agendamento']" class="nav-link">Agendamentos</a>
@@ -17,10 +17,10 @@
             <a [routerLink]="['especialidade']" class="nav-link">Especialidades</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['hospital/listartodos']" class="nav-link">Hospitais</a>
+            <a [routerLink]="['hospital']" class="nav-link">Hospitais</a>
           </li>
           <li class="nav-item">
-            <a [routerLink]="['profissional']" class="nav-link">Profissionais</a>
+            <a [routerLink]="['profissional/listartodos']" class="nav-link">Profissionais</a>
           </li>
         </ul>
       </div>
