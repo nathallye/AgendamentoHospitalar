@@ -22,6 +22,12 @@ import { ProfissionalCriarComponent } from './profissional-criar';
 import { ProfissionalEditarComponent } from './profissional-editar';
 import { ProfissionalExcluirComponent } from './profissional-excluir';
 
+import { HospitalListaComponent } from './hospital-lista';
+import { HospitalDetalheComponent } from './hospital-detalhe';
+import { HospitalCriarComponent } from './hospital-criar';
+import { HospitalEditarComponent } from './hospital-editar';
+import { HospitalExcluirComponent } from './hospital-excluir/hospital-excluir.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -48,7 +54,13 @@ const routes: Routes = [
   { path: 'profissional/listarporid/:id', component: ProfissionalDetalheComponent },
   { path: 'profissional/criar', component: ProfissionalCriarComponent },
   { path: 'profissional/editar/:id', component: ProfissionalEditarComponent },
-  { path: 'profissional/exluir/:id', component: ProfissionalExcluirComponent }
+  { path: 'profissional/exluir/:id', component: ProfissionalExcluirComponent },
+  
+  { path: 'hospital/listartodos', component: HospitalListaComponent },
+  { path: 'hospital/listarporid/:id', component: HospitalDetalheComponent },
+  { path: 'hospital/criar', component: HospitalCriarComponent },
+  { path: 'hospital/editar/:id', component: HospitalEditarComponent },
+  { path: 'hospital/exluir/:id', component: HospitalExcluirComponent }
 ];
 
 @NgModule({
