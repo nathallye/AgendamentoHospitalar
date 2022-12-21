@@ -1,0 +1,41 @@
+<div class="detail-group">
+  <div class="container">
+
+    <div class="title">
+      <h4>Excluir Hospital</h4>
+      <h4 class="text-danger">Tem certeza de que deseja excluir?</h4>
+    </div>
+
+    <div class="detail">
+      <dl>
+        <dt>Nome: </dt>
+        <dd>{{hospital.nome}}</dd>
+      </dl>
+      <dl>
+        <dt>CNPJ:</dt>
+        <dd>{{hospital.cnpj}}</dd>
+      </dl>
+      <dl>
+        <dt>Endereço:</dt>
+        <dd>{{hospital.endereco}}</dd>
+      </dl>
+      <dl>
+        <dt>Telefone:</dt>
+        <dd>{{hospital.telefone}}</dd>
+      </dl>
+      <dl>
+        <dt>CNES:</dt>
+        <dd>{{hospital.cnes}}</dd>
+      </dl>
+      <dl>
+        <dt>Ativo:</dt>
+        <dd>{{hospital.ativo}}</dd>
+      </dl>
+    </div>
+
+    <div class="mb-3 row">
+      <button (click)="apagar()" class="exclude">Excluir</button>
+      <button (click)="sair()">Fechar</button>
+    </div>
+  </div>
+</div>
