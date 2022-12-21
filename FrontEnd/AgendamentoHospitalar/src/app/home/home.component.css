@@ -1,0 +1,31 @@
+.container{
+  display: flex;
+}
+
+.text{
+  margin-top: 150px;
+
+}
+.botoes{
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+}
+.button{
+  width: 200px;
+  height: max-content;
+  margin-bottom: 5px;
+  padding: 5px;
+  background: #4200FF;
+  border-radius: 8px;
+  text-decoration: none;
+
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: white;
+  font-weight: 200;
+}
+
+.button:hover{
+  background: #3600ca;
+}

@@ -1,3 +1,4 @@
+import { HomeComponent } from './home/home.component';
 import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig/listar-agendamentoconfig.component';
 import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig/excluir-agendamentoconfig.component';
 import { EditarAgendamentoconfigComponent } from './components/agendamentoconfig/editar-agendamentoconfig/editar-agendamentoconfig.component';
@@ -16,6 +17,18 @@ import { BeneficiarioCriarComponent } from './beneficiario-criar';
 import { BeneficiarioEditarComponent } from './beneficiario-editar/beneficiario-editar.component';
 import { BeneficiarioExcluirComponent } from './beneficiario-excluir/beneficiario-excluir.component';
 
+import { ProfissionalListaComponent } from './profissional-lista';
+import { ProfissionalDetalheComponent } from './profissional-detalhe';
+import { ProfissionalCriarComponent } from './profissional-criar';
+import { ProfissionalEditarComponent } from './profissional-editar';
+import { ProfissionalExcluirComponent } from './profissional-excluir';
+
+import { HospitalListaComponent } from './hospital-lista';
+import { HospitalDetalheComponent } from './hospital-detalhe';
+import { HospitalCriarComponent } from './hospital-criar';
+import { HospitalEditarComponent } from './hospital-editar';
+import { HospitalExcluirComponent } from './hospital-excluir/hospital-excluir.component';
+
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -25,7 +38,7 @@ const routes: Routes = [
   {path:'agendamentoconfig/detalhe/:id', component:DetalheAgendamentoconfigComponent},
   {path:'agendamentoconfig/editar/:id', component:EditarAgendamentoconfigComponent},
   {path:'agendamentoconfig/excluir/:id', component:ExcluirAgendamentoconfigComponent},
-  
+
   {path:'especialidade', component:ListarEspecialidadesComponent},
   {path:'especialidade/cadastrar', component:CriarEspecialidadeComponent},
   {path:'especialidade/detalhe/:id', component:DetalheEspecialidadeComponent},
@@ -36,11 +49,26 @@ const routes: Routes = [
   { path: 'beneficiarios/listarporid/:id', component: BeneficiarioDetalheComponent },
   { path: 'beneficiarios/criar', component: BeneficiarioCriarComponent },
   { path: 'beneficiarios/editar/:id', component: BeneficiarioEditarComponent },
-  { path: 'beneficiarios/exluir/:id', component: BeneficiarioExcluirComponent }
+  { path: 'beneficiarios/exluir/:id', component: BeneficiarioExcluirComponent },
+
+  { path: 'profissional', component: ProfissionalListaComponent },
+  { path: 'profissional/listarporid/:id', component: ProfissionalDetalheComponent },
+  { path: 'profissional/criar', component: ProfissionalCriarComponent },
+  { path: 'profissional/editar/:id', component: ProfissionalEditarComponent },
+  { path: 'profissional/exluir/:id', component: ProfissionalExcluirComponent },
+
+  { path: 'hospital/listartodos', component: HospitalListaComponent },
+  { path: 'hospital/listarporid/:id', component: HospitalDetalheComponent },
+  { path: 'hospital/criar', component: HospitalCriarComponent },
+  { path: 'hospital/editar/:id', component: HospitalEditarComponent },
+  { path: 'hospital/exluir/:id', component: HospitalExcluirComponent },
+
+  {path: 'home' , component: HomeComponent}
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
+
 export class AppRoutingModule { }
