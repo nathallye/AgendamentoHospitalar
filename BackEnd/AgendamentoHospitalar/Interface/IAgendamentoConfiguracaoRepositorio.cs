@@ -1,11 +1,12 @@
-﻿using AgendamentoHospitalar.DTO;
+﻿using AgendamentoHospitalar.DTO.AgendamentoConfig;
 
-namespace AgendamentoHospitalar.Interfaces
+namespace AgendamentoHospitalar.Interface
 {
     public interface IAgendamentoConfiguracaoRepositorio
     {
-        List<AgendamentoConfiguracaoDTO> ListarTodos();
+        List<AgendamentoConfigOutputDTO> ListarTodos();
         AgendamentoConfiguracaoDTO PorId(int id);
+        AgendamentoConfigOutputDTO ListarJoin(int id);
         int Inserir(AgendamentoConfiguracaoDTO cadastrarDto);
         int Atualizar(AgendamentoConfiguracaoDTO cadastrarDto);
         int Excluir(int Id);

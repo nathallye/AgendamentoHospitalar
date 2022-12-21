@@ -1,15 +1,16 @@
-﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Interfaces;
-using AgendamentoHospitalar.Modelos;
+﻿using AgendamentoHospitalar.DTO.AgendamentoConfig;
+using AgendamentoHospitalar.Entidade;
+using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository.Context;
 
-namespace AgendamentoHospitalar.Repositorio
+namespace AgendamentoHospitalar.Repository
 {
     public class AgendamentoConfiguracaoRepositorio : IAgendamentoConfiguracaoRepositorio
     {
-        private MasterContext _contexto { get; set; }
-        public AgendamentoConfiguracaoRepositorio()
+        private DatabaseContext _contexto { get; set; }
+        public AgendamentoConfiguracaoRepositorio(DatabaseContext context)
         {
-            _contexto = new MasterContext();
+            _contexto = context;
         }
         public int Atualizar(AgendamentoConfiguracaoDTO atualizacaodto)
         {
@@ -76,18 +77,29 @@ namespace AgendamentoHospitalar.Repositorio
             return _contexto.SaveChanges();
         }
 
-        public List<AgendamentoConfiguracaoDTO> ListarTodos()
+        public List<AgendamentoConfigOutputDTO> ListarTodos()
         {
-            return _contexto.AgendamentoConfiguracaos.Select(s => new AgendamentoConfiguracaoDTO()
-            {
-               IdConfiguracao= s.IdConfiguracao,
-               IdHospital= s.IdHospital,
-               IdEspecialidade= s.IdEspecialidade,
-               IdProfissional= s.IdProfissional,
-               DataHoraInicioAtendimento = s.DataHoraInicioAtendimento,
-               DataHoraFinalAtendimento = s.DataHoraFinalAtendimento
+            return (from b in _contexto.AgendamentoConfiguracaos
 
-            }).ToList();
+                    from c in _contexto.Especialidades
+                    where c.IdEspecialidade == b.IdEspecialidade
+
+                    from x in _contexto.Profissionais
+                    where x.IdProfissional == b.IdProfissional
+
+                    from h in _contexto.Hospitais
+                    where h.IdHospital == b.IdHospital
+
+                    select new AgendamentoConfigOutputDTO()
+                    {
+                        NomeHospital = h.Nome,
+                        DataHoraFinalAtendimento = b.DataHoraFinalAtendimento,
+                        DataHoraInicioAtendimento = b.DataHoraInicioAtendimento,
+                        IdConfiguracao = b.IdConfiguracao,
+                        NomeEspecialidade = c.Nome,
+                        NomeProfissional = x.Nome
+                    }
+                      ).ToList();
         }
 
         public AgendamentoConfiguracaoDTO PorId(int id)
@@ -105,6 +117,32 @@ namespace AgendamentoHospitalar.Repositorio
                     })
                      ?.FirstOrDefault()
                      ?? new AgendamentoConfiguracaoDTO();
+        }
+
+        public AgendamentoConfigOutputDTO ListarJoin(int id)
+        {
+            return (from b in _contexto.AgendamentoConfiguracaos
+                    where b.IdConfiguracao == id
+
+                    from c in _contexto.Especialidades
+                    where c.IdEspecialidade == b.IdEspecialidade
+
+                    from x in _contexto.Profissionais
+                    where x.IdProfissional == b.IdProfissional
+
+                    from h in _contexto.Hospitais
+                    where h.IdHospital == b.IdHospital
+
+                    select new AgendamentoConfigOutputDTO()
+                    {
+                        NomeHospital = h.Nome,
+                        DataHoraFinalAtendimento = b.DataHoraFinalAtendimento,
+                        DataHoraInicioAtendimento = b.DataHoraInicioAtendimento,
+                        IdConfiguracao = b.IdConfiguracao,
+                        NomeEspecialidade = c.Nome,
+                        NomeProfissional = x.Nome
+                    }
+                    ).SingleOrDefault();
         }
     }
 }

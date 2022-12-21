@@ -1,4 +1,4 @@
-export default interface IAgendamentoConfiguracaoDTO {
+export default interface IAgendamentoConfiguracaoCadastroDTO {
   idConfiguracao: number;
   idHospital:number;
   idEspecialidade:number;

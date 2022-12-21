@@ -1,6 +1,6 @@
 ﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Modelos;
-using AgendamentoHospitalar.Repositorio;
+using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository.Context;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
@@ -12,11 +12,11 @@ namespace AgendamentoHospitalar.Controllers
     [ApiController]
     public class EspecialidadeController : ControllerBase
     {
-        private EspecialidadeRepositorio _repo { get; set; }
+        public readonly IEspecialidadeRepositorio _repo;
 
-        public EspecialidadeController()
+        public EspecialidadeController( IEspecialidadeRepositorio hospitalRepository)
         {
-            _repo = new EspecialidadeRepositorio();
+            _repo = hospitalRepository;
         }
 
         [HttpPost]

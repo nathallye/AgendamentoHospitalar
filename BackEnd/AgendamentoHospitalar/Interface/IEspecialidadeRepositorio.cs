@@ -1,6 +1,6 @@
 ﻿using AgendamentoHospitalar.DTO;
 
-namespace AgendamentoHospitalar.Interfaces
+namespace AgendamentoHospitalar.Interface
 {
     public interface IEspecialidadeRepositorio
     {
