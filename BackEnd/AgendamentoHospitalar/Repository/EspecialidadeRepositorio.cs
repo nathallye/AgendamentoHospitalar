@@ -1,15 +1,16 @@
 ﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Interfaces;
-using AgendamentoHospitalar.Modelos;
+using AgendamentoHospitalar.Entidade;
+using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository.Context;
 
-namespace AgendamentoHospitalar.Repositorio
+namespace AgendamentoHospitalar.Repository
 {
     public class EspecialidadeRepositorio : IEspecialidadeRepositorio
     {
-        private MasterContext _contexto { get; set; }
-        public EspecialidadeRepositorio()
+        private DatabaseContext _contexto { get; set; }
+        public EspecialidadeRepositorio(DatabaseContext contexto)
         {
-            _contexto = new MasterContext();
+            _contexto = contexto;
         }
         public int Inserir(EspecialidadeDTO novaEspecialidadeDTO)
         {
@@ -31,7 +32,7 @@ namespace AgendamentoHospitalar.Repositorio
                 Nome = s.Nome,
                 Ativo = s.Ativo,
                 Descricao = s.Descricao,
-                IdEspecialidade= s.IdEspecialidade,
+                IdEspecialidade = s.IdEspecialidade,
 
             }).ToList();
         }
@@ -43,7 +44,7 @@ namespace AgendamentoHospitalar.Repositorio
                     where t.IdEspecialidade == id
                     select new EspecialidadeDTO()
                     {
-                        Ativo= t.Ativo,
+                        Ativo = t.Ativo,
                         Descricao = t.Descricao,
                         Nome = t.Nome,
                         IdEspecialidade = t.IdEspecialidade
@@ -84,7 +85,7 @@ namespace AgendamentoHospitalar.Repositorio
 
         public int Excluir(int Id)
         {
-            Especialidade especialidadeBanco=
+            Especialidade especialidadeBanco =
                 (from c in _contexto.Especialidades
                  where c.IdEspecialidade == Id
                  select c).FirstOrDefault();

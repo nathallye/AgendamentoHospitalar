@@ -8,7 +8,7 @@
 
         public string? Telefone { get; set; }
 
-        public string? Endereço { get; set; }
+        public string? Endereco { get; set; }
 
         public bool Ativo { get; set; }
     }

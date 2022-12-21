@@ -1,7 +1,7 @@
-﻿using AgendamentoHospitalar.Context;
-using AgendamentoHospitalar.Dto.Agendamento;
+﻿using AgendamentoHospitalar.Dto.Agendamento;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository.Context;
 
 namespace AgendamentoHospitalar.Repository
 {

@@ -7,14 +7,14 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddDbContext<AgendamentoHospitalar.Context.DatabaseContext>();
-builder.Services.AddScoped<AgendamentoHospitalar.Interface.IProfissionalRepository, AgendamentoHospitalar.Repository.ProfissionalRepository>();
-
 builder.Services.AddDbContext<AgendamentoHospitalar.Repository.Context.DatabaseContext>();
 
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IProfissionalRepository, AgendamentoHospitalar.Repository.ProfissionalRepository>();
 builder.Services.AddScoped<AgendamentoHospitalar.Interface.IBeneficiarioRepository, AgendamentoHospitalar.Repository.BeneficiarioRepository>();
 builder.Services.AddScoped<AgendamentoHospitalar.Interface.IHospitalRepository, AgendamentoHospitalar.Repository.HospitalRepository>();
 builder.Services.AddScoped<AgendamentoHospitalar.Interface.IAgendamentoRepository, AgendamentoHospitalar.Repository.AgendamentoRepository>();
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IAgendamentoConfiguracaoRepositorio, AgendamentoHospitalar.Repository.AgendamentoConfiguracaoRepositorio>();
+builder.Services.AddScoped<AgendamentoHospitalar.Interface.IEspecialidadeRepositorio, AgendamentoHospitalar.Repository.EspecialidadeRepositorio>();
 
 // CORS
 builder.Services.AddCors(options =>

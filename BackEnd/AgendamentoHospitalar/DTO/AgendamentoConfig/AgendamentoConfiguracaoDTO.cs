@@ -1,4 +1,4 @@
-﻿namespace AgendamentoHospitalar.DTO
+﻿namespace AgendamentoHospitalar.DTO.AgendamentoConfig
 {
     public class AgendamentoConfiguracaoDTO
     {

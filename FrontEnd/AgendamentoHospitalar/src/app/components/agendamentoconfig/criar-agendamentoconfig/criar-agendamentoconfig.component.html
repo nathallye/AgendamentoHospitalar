@@ -1,26 +1,32 @@
 <form class="mt-3">
   <div class="form-group">
-    <label for="nameInput">Medico</label>
+    <label for="nameInput">Profissional</label>
     <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novoAgendamentoConfig.idProfissional">
       <option selected>Selecione uma opção</option>
-      <option *ngFor="let item of listaEspecialidades">Ativo</option>
-      <option value="false">Inativo</option>
+      <option *ngFor="let itemProfissional of listaProfissionais" [value]="itemProfissional.idProfissional">{{itemProfissional.nome}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="nameInput">Hospital</label>
     <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novoAgendamentoConfig.idHospital">
       <option selected>Selecione uma opção</option>
-      <option *ngFor="let item of listaEspecialidades">Ativo</option>
-      <option value="false">Inativo</option>
+      <option *ngFor="let itemHospital of listaHospitais" [value]="itemHospital.idHospital">{{itemHospital.nome}}</option>
     </select>
   </div>
   <div class="form-group">
     <label for="nameInput">Especialidade</label>
     <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novoAgendamentoConfig.idEspecialidade">
       <option selected>Selecione uma opção</option>
-      <option *ngFor="let item of listaEspecialidades">{{item.nome}}</option>
+      <option *ngFor="let itemEspecialidade of listaEspecialidades" [value]="itemEspecialidade.idEspecialidade">{{itemEspecialidade.nome}}</option>
     </select>
+  </div>
+  <div class="form-group">
+    <label for="nameInput">Data/Hora Inicio</label>
+    <input type="datetime-local" class="form-control" name="datainicial" [(ngModel)]="novoAgendamentoConfig.dataHoraInicioAtendimento" >
+  </div>
+  <div class="form-group">
+    <label for="nameInput">Data/Hora Final</label>
+    <input type="datetime-local" class="form-control" name="datafinal"  [(ngModel)]="novoAgendamentoConfig.dataHoraFinalAtendimento" >
   </div>
   <button (click)="cadastrar()" class="btn btn-primary mt-3 mb-5">Cadastrar</button>
 </form>

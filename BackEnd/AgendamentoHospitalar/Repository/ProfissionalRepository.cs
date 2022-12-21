@@ -1,7 +1,7 @@
-﻿using AgendamentoHospitalar.Context;
-using AgendamentoHospitalar.Dto.Profissional;
+﻿using AgendamentoHospitalar.Dto.Profissional;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository.Context;
 
 namespace AgendamentoHospitalar.Repository
 {
@@ -18,7 +18,7 @@ public class ProfissionalRepository : IProfissionalRepository
         public Profissional Atualizar(ProfissionalAtualizarDto profissional)
         {
             Profissional profissionalEntidadeBD =
-               (from c in _context.Profissionals
+               (from c in _context.Profissionais
                 where c.IdProfissional == profissional.IdProfissional
                 select c)
                 ?.FirstOrDefault()
@@ -35,13 +35,13 @@ public class ProfissionalRepository : IProfissionalRepository
                 IdProfissional = profissional.IdProfissional,
                 Nome = (profissional.Nome != null ? profissional.Nome : profissionalEntidadeBD.Nome),
                 Telefone = (profissional.Telefone != null ? profissional.Telefone : profissionalEntidadeBD.Telefone),
-                Endereço = (profissional.Endereco != null ? profissional.Endereco : profissionalEntidadeBD.Endereço),
+                Endereco = (profissional.Endereco != null ? profissional.Endereco : profissionalEntidadeBD.Endereco),
                 Ativo = profissional.Ativo,
 
             };
 
             _context.ChangeTracker.Clear();
-            _context.Profissionals.Update(profissionalEntidade);
+            _context.Profissionais.Update(profissionalEntidade);
             _context.SaveChanges();
             return profissionalEntidade;
         }
@@ -52,12 +52,12 @@ public class ProfissionalRepository : IProfissionalRepository
             {
                 Nome = profissional.Nome,
                 Telefone = profissional.Telefone,
-                Endereço = profissional.Endereco,
+                Endereco = profissional.Endereco,
                 Ativo = profissional.Ativo,
             };
 
             _context.ChangeTracker.Clear();
-            _context.Profissionals.Add(profissionalEntidade);
+            _context.Profissionais.Add(profissionalEntidade);
             _context.SaveChanges();
             return profissionalEntidade;
         }
@@ -69,20 +69,20 @@ public class ProfissionalRepository : IProfissionalRepository
                 IdProfissional = Id
             };
 
-            _context.Profissionals.Remove(profissional);
+            _context.Profissionais.Remove(profissional);
             return _context.SaveChanges();
         }
 
         public ProfissionalDto ListarPorId(int id)
         {
-            return (from t in _context.Profissionals
+            return (from t in _context.Profissionais
                     where t.IdProfissional == id
                     select new ProfissionalDto()
                     {
                         IdProfissional = t.IdProfissional,
                         Nome = t.Nome,
                         Telefone = t.Telefone,
-                        Endereço = t.Endereço,
+                        Endereco = t.Endereco,
                         Ativo = t.Ativo,
 
                     })
@@ -92,12 +92,12 @@ public class ProfissionalRepository : IProfissionalRepository
 
         public List<ProfissionalDto> ListarTodos()
         {
-            return _context.Profissionals.Select(s => new ProfissionalDto()
+            return _context.Profissionais.Select(s => new ProfissionalDto()
             {
                 IdProfissional = s.IdProfissional,
                 Nome = s.Nome,
                 Telefone = s.Telefone,
-                Endereço = s.Endereço,
+                Endereco = s.Endereco,
                 Ativo = s.Ativo,
             }).ToList();
         }

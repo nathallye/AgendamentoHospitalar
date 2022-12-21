@@ -1,1 +1,19 @@
-<p>editar-especialidade works!</p>
+<form class="mt-3">
+  <div class="form-group">
+    <label for="nameInput">Nome</label>
+    <input type="text" class="form-control" id="nome" name="nome" [value]="novaEspecialidade.nome" [(ngModel)]="novaEspecialidade.nome" placeholder="Nome da Especialidade">
+  </div>
+  <div class="form-group">
+    <label for="nameInput">Descrição</label>
+    <input type="text" class="form-control" id="descricao" name="descricao" [(ngModel)]="novaEspecialidade.descricao" [value]="novaEspecialidade.descricao" placeholder="Descrição da Especialidade">
+  </div>
+  <div class="form-group">
+    <label for="nameInput">Ativo</label>
+    <select class="form-select" name="ativo" aria-label="ativo" [(ngModel)]="novaEspecialidade.ativo">
+      <option selected>Selecione uma opção</option>
+      <option value="true">Ativo</option>
+      <option value="false">Inativo</option>
+    </select>
+  </div>
+  <button (click)="cadastrar()" class="btn btn-primary mt-3 mb-5">Cadastrar</button>
+</form>
