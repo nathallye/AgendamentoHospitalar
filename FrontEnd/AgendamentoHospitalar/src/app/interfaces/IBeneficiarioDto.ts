@@ -8,4 +8,5 @@ export interface IBeneficiarioDto {
   numeroCarteirinha: string,
   ativo: boolean,
   email: string
+  senha:string;
 }
