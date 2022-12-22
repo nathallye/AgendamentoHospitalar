@@ -8,7 +8,7 @@
         public string? Endereco { get; set; }
         public string NumeroCarteirinha { get; set; } = null!;
         public bool Ativo { get; set; }
-        public string Email { get; set; } = null!;
-        public string Senha { get; set; } = null!;
+        public string? Email { get; set; } = null!;
+        public string? Senha { get; set; } = null!;
     }
 }

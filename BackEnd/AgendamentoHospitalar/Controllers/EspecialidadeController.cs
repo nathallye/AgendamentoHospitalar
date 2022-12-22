@@ -1,10 +1,7 @@
 ﻿using AgendamentoHospitalar.DTO;
 using AgendamentoHospitalar.Interface;
-using AgendamentoHospitalar.Repository.Context;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
+
 
 namespace AgendamentoHospitalar.Controllers
 {
