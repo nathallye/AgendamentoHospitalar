@@ -1,8 +1,8 @@
-<div>
+ <div>
   <div class="card">
 
     <p>
-      <button>Criar</button>
+      <button (click)="criar()">Criar</button>
     </p>
 
     <div class="card-header bg-dark">
@@ -24,19 +24,19 @@
 
       <tbody>
         <tr *ngFor="let agendamentoItem of listaAgendamentos">
-          <td>{{agendamentoItem.idBeneficiarioNavigation.nome}}</td>
-          <td>{{agendamentoItem.idHospitalNavigation.nome}}</td>
-          <td>{{agendamentoItem.idEspecialidadeNavigation.nome}}</td>
-          <td>{{agendamentoItem.idProfissionalNavigation.nome}}</td>
-          <td>{{agendamentoItem.dataHoraAgendamento}}</td>
-          <td>{{agendamentoItem.ativo}}</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td>
-            <i (click)="excluir(agendamentoItem.idAgendamento)" class="material-icons">delete</i>
+             <i (click)="excluir(agendamentoItem.idAgendamento)" class="material-icons">delete</i>
             <i (click)="editar(agendamentoItem.idAgendamento)" class="material-icons">edit</i>
             <i (click)="listarPorId(agendamentoItem.idAgendamento)" class="material-icons">visibility</i>
-          </td>
-        </tr>
-      </tbody>
+           </td>
+      </tr>
+    </tbody>
     </table>
   </div>
 </div>

@@ -1,3 +1,6 @@
+import { AgendamentoEditarComponent } from './components/agendamento/agendamento-editar/agendamento-editar.component';
+import { AgendamentoExcluirComponent } from './components/agendamento/agendamento-excluir/agendamento-excluir.component';
+import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
 import { HomeComponent } from './home/home.component';
 import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig/listar-agendamentoconfig.component';
 import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig/excluir-agendamentoconfig.component';
@@ -65,8 +68,14 @@ const routes: Routes = [
   { path: 'hospital/exluir/:id', component: HospitalExcluirComponent },
 
   { path: 'agendamentos/listartodos', component: AgendamentoListaComponent },
+  { path: 'agendamentos/criar', component: AgendamentoCriarComponent },
+  { path: 'agendamentos/editar/:id', component: AgendamentoEditarComponent },
+  { path: 'agendamentos/excluir/:id', component: AgendamentoExcluirComponent },
 
-  {path: 'home', component: HomeComponent}
+
+  {path: 'home', component: HomeComponent},
+  {path: '', component: HomeComponent}
+
 ];
 
 @NgModule({

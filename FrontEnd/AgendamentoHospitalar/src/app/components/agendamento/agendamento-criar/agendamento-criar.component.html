@@ -2,53 +2,52 @@
   <form>
     <h4>Agendamento</h4>
     <hr />
-
-    <div class="container">
       <div class="mb-3 row">
         <label for="agendamentoBeneficiario" class="col-sm-4 col-form-label">Beneficiário</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="agendamentoBeneficiario" [(ngModel)]="agendamento.idBeneficiario" name="agendamentoBeneficiario">
+        <select class="form-select" name="ativo" aria-label="ativo">
+          <option selected>Selecione uma opção</option>
+          <option *ngFor="let itemBeneficiario of listaBeneficiario" [value]="itemBeneficiario.idBeneficiario" [(ngModel)]="novoAgendamento.idBeneficiario">{{itemBeneficiario.nome}}</option>
+        </select>
         </div>
-        </div>
-      </div>
       <div class="mb-3 row">
         <label for="hospital" class="col-sm-4 col-form-label">Hospital</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="hospital" [(ngModel)]="agendamento.idHospital" name="hospital">
-        </div>
+        <select class="form-select" name="ativo" aria-label="ativo">
+          <option selected>Selecione uma opção</option>
+          <option *ngFor="let hospitalItem of listaHospitais" [value]="hospitalItem.idHospital" [(ngModel)]="novoAgendamento.idHospital" >{{hospitalItem.nome}}</option>
+        </select>
       </div>
-
       <div class="mb-3 row">
         <label for="especialidade" class="col-sm-4 col-form-label">Especialidade</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="especialidade" [(ngModel)]="agendamento.idEspecialidade" name="especialidade">
-        </div>
+        <select class="form-select" name="ativo" aria-label="ativo">
+          <option selected>Selecione uma opção</option>
+          <option *ngFor="let itemEspecialidade of listaEspecialidade" >{{itemEspecialidade.nome}}</option>
+        </select>
       </div>
-
       <div class="mb-3 row">
         <label for="profissional" class="col-sm-4 col-form-label">Profissional</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="profissional" [(ngModel)]="agendamento.idProfissional" name="profissional">
+          <input type="text" class="form-control" id="profissional" name="profissional">
         </div>
       </div>
 
       <div class="mb-3 row">
         <label for="dataHora" class="col-sm-4 col-form-label">Data e Hora</label>
         <div class="col-sm-6">
-          <input type="text" class="form-control" id="data" [(ngModel)]="agendamento.dataHoraAgendamento" name="dataHora">
+          <input type="text" class="form-control" id="data" name="dataHora">
         </div>
       </div>
 
       <div class="mb-3 row">
         <label for="ativo" class="col-sm-4 col-form-label">Ativo</label>
         <div class="col-sm-6">
-          <input type="checkbox" class="form-check-input" id="ativo" [(ngModel)]="agendamento.ativo" name="ativo">
+          <input type="checkbox" class="form-check-input" id="ativo"  name="ativo">
         </div>
       </div>
 
       <div class="mb-3 row">
-        <button (click)="salvar()" class="save">Cadastrar</button>
-        <button (click)="sair()">Fechar</button>
+        <button  class="save">Cadastrar</button>
+        <button >Fechar</button>
       </div>
-  </form>
-</div>
+    </form>
+  </div>
+

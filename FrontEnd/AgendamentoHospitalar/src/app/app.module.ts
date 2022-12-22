@@ -40,8 +40,8 @@ import { HospitalCriarComponent } from './hospital-criar/hospital-criar.componen
 
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
 import { HomeComponent } from './home/home.component';
-//import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
-//import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
+import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
+import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
 
 @NgModule({
     declarations: [
@@ -73,8 +73,8 @@ import { HomeComponent } from './home/home.component';
         HospitalDetalheComponent,
         HospitalCriarComponent,
         AgendamentoListaComponent,
-        //AgendamentoDetalheComponent,
-        //AgendamentoCriarComponent
+        AgendamentoDetalheComponent,
+        AgendamentoCriarComponent
     ],
     imports: [
         BrowserModule,

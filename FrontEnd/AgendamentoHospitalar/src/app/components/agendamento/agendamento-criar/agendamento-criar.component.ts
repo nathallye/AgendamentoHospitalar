@@ -1,11 +1,14 @@
-import { IHospitalDto } from './../../../interfaces/IHospitalDto';
 import { IProfissionalDto } from './../../../interfaces/IProfissionalDto';
+import  IEspecialidadeDTO  from 'src/app/interfaces/IEspecialidadeDTO';
+import { IHospitalDto } from './../../../interfaces/IHospitalDto';
+import { IBeneficiarioDto } from './../../../interfaces/IBeneficiarioDto';
+import  IAgendamentoConfiguracaoDTO  from 'src/app/interfaces/IAgendamentoConfiguracaoDTO';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-
-import IEspecialidadeDTO from 'src/app/interfaces/IEspecialidadeDTO';
 import { IAgendamentoDto } from 'src/app/interfaces/IAgendamentoDto';
+import { map } from 'rxjs';
+import IAgendamentoConfiguracao from 'src/app/interfaces/IAgendamentoConfiguracao';
 
 @Component({
   selector: 'app-agendamento-criar',
@@ -13,74 +16,69 @@ import { IAgendamentoDto } from 'src/app/interfaces/IAgendamentoDto';
   styleUrls: ['./agendamento-criar.component.css']
 })
 export class AgendamentoCriarComponent {
-    beneficiario!: IAgendamentoDto;
-    idRecebido!: number;
-    listarEspecialidades: IEspecialidadeDTO[] = [];
-    listaProfissional: IProfissionalDto[] = [];
-    listaHospital: IHospitalDto[] = [];
-    IAgendamentoDto = {
-    dataHoraAgendamento: new Date(),
-    idBeneficiario: '',
-    idHospital: '',
-    idProfissional: '',
-    idEspecialidade: '',
- }
+    novoAgendamento!:IAgendamentoDto;
+    listaAgendamentoConfig:IAgendamentoConfiguracao[] = [];
+    listaEspecialidade:IEspecialidadeDTO[] =[];
+    listaProfissional:IProfissionalDto[]=[]
+    listaBeneficiario:IBeneficiarioDto[] = [];
+    listaHospitais:IHospitalDto[]=[];
+    selecao:number = 1;
 
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
-    this.route.paramMap.subscribe(params => {
-      this.idRecebido = Number(params.get('id'));
-    });
-  }
-
-
-  ngOnInit(): void {
-    this.AgendamentoCriarComponent
-
-    }
-  }
-/*
-  nome: string;
-  idAgendamento: number,
-  idBeneficiario: number,
-  idHospital: number,
-  idEspecialidade: number,
-  idProfissional: number,
-  dataHoraAgendamento: Date,
-  ativo: boolean,
-  idBeneficiarioNavigation: IBeneficiarioDto,
-  idHospitalNavigation: IHospitalDto,
-  idEspecialidadeNavigation: IEspecialidadeDTO,
-  idProfissionalNavigation: IProfissionalDto
-  */
-  salvar() {
-    if (this.validarInformacoes()) {
-      if (this.agendamento.idAgendamento == 0) {
-
-        this.http.post('https://localhost:7275/api/Agendamentos/Criar', this.agendamento)
-          .subscribe((data) => {
-            this.router.navigate(['agendamento/listartodos']);
-          });
-      } else {
-        console.log('Erro na validação');
-        // TRATAMENTO DE ERRO
-        // ALERTA
-        // BORDA VERMELHA
+    this.http.get('https://localhost:7275/ListarAgendamentoConfiguracao')
+    .pipe(
+      map(response=> Object.values(response))
+    )
+    .subscribe(data=>{
+      for(let i =0; i<data.length;i++){
+        let novoAgendamentoConfig:IAgendamentoConfiguracao= data[i];
+        this.listaAgendamentoConfig.push(novoAgendamentoConfig)
       }
-    }
-  }
+    })
 
-  validarInformacoes(): boolean {
-    if (this.agendamento.nome == '') {
-      return false;
-    }
+    this.http.get('https://localhost:7275/api/Beneficiarios/ListarTodos',)
+    .pipe(
+      map(response=> Object.values(response))
+    )
+    .subscribe(data=>{
+      for(let i =0; i<data.length;i++){
+        let novoBeneficiario:IBeneficiarioDto = data[i];
+        this.listaBeneficiario.push(novoBeneficiario)
+      }
+    })
 
-    // VALIDAR COM REGEX
+    this.http.get('https://localhost:7275/api/Hospitais/ListarTodos',)
+    .pipe(
+      map(response=> Object.values(response))
+    )
+    .subscribe(data=>{
+      for(let i =0; i<data.length;i++){
+        let novoHospital:IHospitalDto= data[i];
+        this.listaHospitais.push(novoHospital)
+      }
+    })
 
-    return true;
-  }
+    this.http.get('https://localhost:7275/ListarEspecialidade',)
+    .pipe(
+      map(response=> Object.values(response))
+    )
+    .subscribe(data=>{
+      for(let i =0; i<data.length;i++){
+        let novaEspecialidade:IEspecialidadeDTO= data[i];
+        this.listaEspecialidade.push(novaEspecialidade)
+      }
+    })
 
-  sair() {
-    this.router.navigate(['agendamentos/listartodos']);
+    this.http.get('https://localhost:7275/api/Profissional/ListarTodos',)
+    .pipe(
+      map(response=> Object.values(response))
+    )
+    .subscribe(data=>{
+      for(let i =0; i<data.length;i++){
+        let novoProfissional:IProfissionalDto= data[i];
+        this.listaProfissional.push(novoProfissional)
+      }
+    })
   }
 }
