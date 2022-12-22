@@ -28,6 +28,7 @@ export class BeneficiarioExcluirComponent {
           this.beneficiario = data as IBeneficiarioDto;
 
           this.beneficiario = {
+            senha: this.beneficiario.senha,
             idBeneficiario: this.idRecebido,
             nome: this.beneficiario.nome,
             senha: this.beneficiario.senha,

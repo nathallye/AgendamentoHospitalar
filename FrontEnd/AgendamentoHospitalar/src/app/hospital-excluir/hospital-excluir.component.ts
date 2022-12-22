@@ -22,7 +22,7 @@ export class HospitalExcluirComponent {
   ngOnInit(): void {
     if (this.idRecebido) {
       this.http
-        .get(`https://localhost:7275/api/Hospital/ListarPorId/${this.idRecebido}`)
+        .get(`https://localhost:7275/api/Hospitais/ListarPorId/${this.idRecebido}`)
         .subscribe((data) => {
 
           this.hospital = data as IHospitalDto;
@@ -42,7 +42,7 @@ export class HospitalExcluirComponent {
 
   apagar() {
     if (this.hospital.idHospital !== 0) {
-      this.http.delete(`https://localhost:7275/api/Hospital/Excluir/${this.idRecebido}`)
+      this.http.delete(`https://localhost:7275/api/Hospitais/Excluir/${this.idRecebido}`)
       .subscribe((data) => {
         this.router.navigate(['hospital/listartodos']);
       });

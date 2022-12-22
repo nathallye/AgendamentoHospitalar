@@ -25,12 +25,7 @@ export class ListarEspecialidadesComponent {
     )
     .subscribe(data=>{
       for(let i =0; i<data.length;i++){
-        let novaEspecialidade:IEspecialidadeDTO = {
-          ativo: data[i].ativo,
-          descricao: data[i].descrição,
-          nome: data[i].nome,
-          idEspecialidade: data[i].idEspecialidade
-        }
+        let novaEspecialidade:IEspecialidadeDTO = data[i]
         this.EspecialidadesLista.push(novaEspecialidade)
       }
     })
@@ -45,7 +40,7 @@ export class ListarEspecialidadesComponent {
   }
 
   editar(id: number) {
-    this.router.navigate([`especialidade/editar/:${id}`]);
+    this.router.navigate([`especialidade/editar/${id}`]);
   }
 
   excluir(id: number) {

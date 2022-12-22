@@ -33,10 +33,11 @@ export class BeneficiarioCriarComponent {
     }
   }
 
+
   salvar() {
     if (this.validarInformacoes()) {
       if (this.beneficiario.idBeneficiario == 0) {
-
+        console.log(this.beneficiario)
         this.http.post('https://localhost:7275/api/Beneficiarios/Criar', this.beneficiario)
           .subscribe((data) => {
             this.router.navigate(['beneficiarios/listartodos']);

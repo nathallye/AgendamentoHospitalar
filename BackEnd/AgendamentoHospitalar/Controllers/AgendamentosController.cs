@@ -1,7 +1,6 @@
 ﻿using AgendamentoHospitalar.Dto.Agendamento;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
-using AgendamentoHospitalar.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendamentoHospitalar.Controllers
@@ -25,7 +24,7 @@ namespace AgendamentoHospitalar.Controllers
         {
             try
             {
-                List<AgendamentoDto> lista = _agendamentoRepository.ListarTodos();
+                List<AgendamentoOutDTO> lista = _agendamentoRepository.ListarTodos();
                 if (lista == null)
                 {
                     return NoContent();
@@ -72,7 +71,7 @@ namespace AgendamentoHospitalar.Controllers
         [Route("Criar")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(Agendamento))]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public IActionResult Criar(AgendamentoCriarDto novoAgendamento)
+        public IActionResult Criar(AgendamentoDto novoAgendamento)
         {
             try
             {

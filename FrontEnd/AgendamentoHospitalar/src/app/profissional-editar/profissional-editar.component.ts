@@ -44,7 +44,7 @@ export class ProfissionalEditarComponent {
 
         this.http.patch(`https://localhost:7275/api/Profissional/Atualizar/${this.idRecebido}`, this.profissional)
           .subscribe((data) => {
-            this.router.navigate(['profissional/listartodos']);
+            this.router.navigate(['profissional']);
           });
       } else {
         console.log('Erro na validação');

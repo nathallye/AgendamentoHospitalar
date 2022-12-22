@@ -10,9 +10,9 @@
       <thead class="bg-secondary text-white">
         <tr>
           <th>Id</th>
-          <th>IdHospital</th>
-          <th>IdEspecialidade</th>
-          <th>IdProfissional<th>
+          <th>Hospital</th>
+          <th>Especialidade</th>
+          <th>Profissional<th>
           <th>Data/Hora Inicio</th>
           <th>Data/Hora Final</th>
         </tr>
@@ -21,15 +21,15 @@
       <tbody>
         <tr *ngFor="let especialidadeItem of agendamentoConfigLista ">
           <td>{{especialidadeItem.idConfiguracao}}</td>
-          <td>{{especialidadeItem.idHospital}}</td>
-          <td>{{especialidadeItem.idEspecialidade}}</td>
-          <td>{{especialidadeItem.idProfissional}}</td>
+          <td>{{especialidadeItem.nomeHospital}}</td>
+          <td>{{especialidadeItem.nomeEspecialidade}}</td>
+          <td>{{especialidadeItem.nomeProfissional}}</td>
           <td>{{especialidadeItem.dataHoraInicioAtendimento}}</td>
           <td>{{especialidadeItem.dataHoraFinalAtendimento}}</td>
           <td>
-            <i class="material-icons" (click)="excluir(especialidadeItem.idEspecialidade)">delete</i>
-            <i class="material-icons" (click)="editar(especialidadeItem.idEspecialidade)">edit</i>
-            <i class="material-icons" (click)="listarPorId(especialidadeItem.idEspecialidade)" >visibility</i>
+            <i class="material-icons" (click)="excluir(especialidadeItem.idConfiguracao)">delete</i>
+            <i class="material-icons" (click)="editar(especialidadeItem.idConfiguracao)">edit</i>
+            <i class="material-icons" (click)="listarPorId(especialidadeItem.idConfiguracao)" >visibility</i>
           </td>
         </tr>
       </tbody>

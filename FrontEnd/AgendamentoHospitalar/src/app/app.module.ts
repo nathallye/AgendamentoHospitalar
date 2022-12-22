@@ -7,7 +7,6 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from "./header/header.component";
-import { FooterComponent } from './templates/footer/footer.component';
 
 import { CriarAgendamentoconfigComponent } from './components/agendamentoconfig/criar-agendamentoconfig/criar-agendamentoconfig.component';
 import { DetalheAgendamentoconfigComponent } from './components/agendamentoconfig/detalhe-agendamentoconfig/detalhe-agendamentoconfig.component';
@@ -40,16 +39,14 @@ import { HospitalDetalheComponent } from './hospital-detalhe/hospital-detalhe.co
 import { HospitalCriarComponent } from './hospital-criar/hospital-criar.component';
 
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
-import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
-import { AgendamentoExcluirComponent } from './components/agendamento/agendamento-excluir/agendamento-excluir.component';
-import { AgendamentoEditarComponent } from './components/agendamento/agendamento-editar/agendamento-editar.component';
-import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
+import { HomeComponent } from './home/home.component';
+//import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
+//import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeaderComponent,
-        FooterComponent,
         CriarAgendamentoconfigComponent,
         DetalheAgendamentoconfigComponent,
         ExcluirAgendamentoconfigComponent,
@@ -76,11 +73,8 @@ import { AgendamentoCriarComponent } from './components/agendamento/agendamento-
         HospitalDetalheComponent,
         HospitalCriarComponent,
         AgendamentoListaComponent,
-        AgendamentoDetalheComponent,
-        AgendamentoExcluirComponent,
-        AgendamentoEditarComponent,
-        AgendamentoDetalheComponent,
-        AgendamentoCriarComponent,
+        //AgendamentoDetalheComponent,
+        //AgendamentoCriarComponent
     ],
     imports: [
         BrowserModule,

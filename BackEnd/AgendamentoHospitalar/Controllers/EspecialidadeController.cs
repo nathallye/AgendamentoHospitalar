@@ -1,10 +1,7 @@
-﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Modelos;
-using AgendamentoHospitalar.Repositorio;
-using Microsoft.AspNetCore.Http;
+﻿using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalarData.DTO.Especialidade;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
-using Microsoft.Extensions.Configuration;
+
 
 namespace AgendamentoHospitalar.Controllers
 {
@@ -12,11 +9,11 @@ namespace AgendamentoHospitalar.Controllers
     [ApiController]
     public class EspecialidadeController : ControllerBase
     {
-        private EspecialidadeRepositorio _repo { get; set; }
+        public readonly IEspecialidadeRepositorio _repo;
 
-        public EspecialidadeController()
+        public EspecialidadeController( IEspecialidadeRepositorio repo)
         {
-            _repo = new EspecialidadeRepositorio();
+            _repo = repo;
         }
 
         [HttpPost]
@@ -36,10 +33,10 @@ namespace AgendamentoHospitalar.Controllers
             }
         }
 
- 
+
         [HttpGet]
         [Route("/ListarEspecialidades")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<EspecialidadeDTO>))]
         public IActionResult ListarTodas()
         {
             try
@@ -64,7 +61,7 @@ namespace AgendamentoHospitalar.Controllers
         }
         [HttpGet]
         [Route("/ListarEspecialidades/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EspecialidadeDTO))]
         public IActionResult ListarPorId(int id)
         {
             try
@@ -115,8 +112,8 @@ namespace AgendamentoHospitalar.Controllers
         {
             try
             {
-                _repo.Atualizar(novaEspecialidade);
-                return Ok();
+                var linhasAfetadas = _repo.Atualizar(novaEspecialidade);
+                return Ok(linhasAfetadas);
             }
             catch (Exception ex)
             {

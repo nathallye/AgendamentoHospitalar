@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
-import IAgendamentoConfiguracaoDTO from 'src/app/interfaces/IAgendamentoConfiguracaoDTO';
+import IAgendamentoConfiguracaoDTO from 'src/app/interfaces/IAgendamentoConfiguracao';
 
 @Component({
   selector: 'app-listar-agendamentoconfig',
@@ -11,7 +11,7 @@ import IAgendamentoConfiguracaoDTO from 'src/app/interfaces/IAgendamentoConfigur
 })
 export class ListarAgendamentoconfigComponent {
   agendamentoConfigLista:IAgendamentoConfiguracaoDTO[] = [];
-  telaApresentar:string = 'listar';
+
 
   constructor(private http:HttpClient, private router: Router){
     this.listarAgendamentoConfig()
@@ -24,13 +24,7 @@ export class ListarAgendamentoconfigComponent {
     )
     .subscribe((data:any)=>{
       for(let i =0; i<data.length;i++){
-        // let newEspecialidade:IAgendamentoConfiguracaoDTO = {
-        //   ativo: data[i].ativo,
-        //   descricao: data[i].descrição,
-        //   nome: data[i].nome,
-        //   idEspecialidade: data[i].idEspecialidade
-        // }
-        this.agendamentoConfigLista.push(data as IAgendamentoConfiguracaoDTO)
+        this.agendamentoConfigLista.push(data[i] as IAgendamentoConfiguracaoDTO)
       }
     })
   }

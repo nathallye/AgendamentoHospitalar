@@ -1,5 +1,5 @@
-﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Repositorio;
+﻿using AgendamentoHospitalar.DTO.AgendamentoConfig;
+using AgendamentoHospitalar.Interface;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,11 +9,11 @@ namespace AgendamentoHospitalar.Controllers
     [ApiController]
     public class AgendamentoConfiguracaoController : ControllerBase
     {
-        private AgendamentoConfiguracaoRepositorio _repo { get; set; }
+        private IAgendamentoConfiguracaoRepositorio _repo { get; set; }
 
-        public AgendamentoConfiguracaoController()
+        public AgendamentoConfiguracaoController(IAgendamentoConfiguracaoRepositorio repo)
         {
-            _repo = new AgendamentoConfiguracaoRepositorio();
+            _repo = repo;
         }
 
         [HttpPost]
@@ -58,26 +58,7 @@ namespace AgendamentoHospitalar.Controllers
                 return BadRequest(ex.Message);
             }
         }
-        [HttpGet]
-        [Route("/ListarAgendamentoConfiguracao/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
-        public IActionResult ListarPorId(int id)
-        {
-            try
-            {
-                var agendamentoconfig = _repo.PorId(id);
-                if (agendamentoconfig == null)
-                {
-                    return NoContent();
-                }
-
-                return Ok(agendamentoconfig);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
-        }
+   
 
         [HttpDelete]
         [Route("/DeletarAgendamentoConfiguracao/{id}")]
@@ -113,6 +94,27 @@ namespace AgendamentoHospitalar.Controllers
             {
                 _repo.Atualizar(atualizacaodto);
                 return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("/ListarAgendamentoConfiguracao/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        public IActionResult ListarJoin(int id)
+        {
+            try
+            {
+                var agendamentoconfig = _repo.ListarJoin(id);
+                if (agendamentoconfig == null)
+                {
+                    return NoContent();
+                }
+
+                return Ok(agendamentoconfig);
             }
             catch (Exception ex)
             {
