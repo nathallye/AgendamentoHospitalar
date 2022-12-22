@@ -24,12 +24,13 @@ export class BeneficiarioDetalheComponent {
       this.http
         .get(`https://localhost:7275/api/Beneficiarios/ListarPorId/${this.idRecebido}`)
         .subscribe((data) => {
-          
+
           this.beneficiario = data as IBeneficiarioDto;
-          
+
           this.beneficiario = {
             idBeneficiario: this.idRecebido,
             nome: this.beneficiario.nome,
+            senha: this.beneficiario.senha,
             cpf: this.beneficiario.cpf,
             numeroCarteirinha: this.beneficiario.numeroCarteirinha,
             telefone: this.beneficiario.telefone,

@@ -19,10 +19,11 @@ export class BeneficiarioCriarComponent {
     });
   }
 
-  ngOnInit(): void {     
+  ngOnInit(): void {
     this.beneficiario = {
       idBeneficiario: this.idRecebido ?? 0,
       nome: '',
+      senha: '',
       cpf: '',
       numeroCarteirinha: '',
       telefone: '',

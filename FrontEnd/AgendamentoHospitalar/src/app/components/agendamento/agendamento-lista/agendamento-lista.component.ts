@@ -34,4 +34,22 @@ export class AgendamentoListaComponent {
         }
       });
   }
+
+  listarPorId(id: number) {
+    this.router.navigate([`agendamentos/listarporid/${id}`]);
+  }
+
+  criar() {
+    this.router.navigate(['agendamentos/criar']);
+  }
+
+  editar(id: number) {
+    this.router.navigate([`agendamentos/editar/${id}`]);
+  }
+
+  excluir(id: number) {
+    this.router.navigate([`agendamentos/exluir/${id}`]);
+  }
 }
+
+

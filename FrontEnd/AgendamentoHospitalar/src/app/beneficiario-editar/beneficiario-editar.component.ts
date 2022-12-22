@@ -24,18 +24,19 @@ export class BeneficiarioEditarComponent {
       this.http
         .get(`https://localhost:7275/api/Beneficiarios/ListarPorId/${this.idRecebido}`)
         .subscribe((data) => {
-          
-          this.beneficiario = data as IBeneficiarioDto;
-          
+
+        const beneficiario = data as IBeneficiarioDto;
+
           this.beneficiario = {
-            idBeneficiario: this.idRecebido,
-            nome: this.beneficiario.nome,
-            cpf: this.beneficiario.cpf,
-            numeroCarteirinha: this.beneficiario.numeroCarteirinha,
-            telefone: this.beneficiario.telefone,
-            email: this.beneficiario.email,
-            endereco: this.beneficiario.endereco,
-            ativo: this.beneficiario.ativo
+            idBeneficiario: beneficiario.idBeneficiario,
+            nome: beneficiario.nome,
+            senha: beneficiario.senha,
+            cpf: beneficiario.cpf,
+            numeroCarteirinha: beneficiario.numeroCarteirinha,
+            telefone: beneficiario.telefone,
+            email: beneficiario.email,
+            endereco: beneficiario.endereco,
+            ativo: beneficiario.ativo
           }
         });
     }

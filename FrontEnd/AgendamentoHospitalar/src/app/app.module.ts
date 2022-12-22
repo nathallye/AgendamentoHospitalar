@@ -40,8 +40,10 @@ import { HospitalDetalheComponent } from './hospital-detalhe/hospital-detalhe.co
 import { HospitalCriarComponent } from './hospital-criar/hospital-criar.component';
 
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
-//import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
-//import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
+import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
+import { AgendamentoExcluirComponent } from './components/agendamento/agendamento-excluir/agendamento-excluir.component';
+import { AgendamentoEditarComponent } from './components/agendamento/agendamento-editar/agendamento-editar.component';
+import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
 
 @NgModule({
     declarations: [
@@ -74,8 +76,11 @@ import { AgendamentoListaComponent } from './components/agendamento/agendamento-
         HospitalDetalheComponent,
         HospitalCriarComponent,
         AgendamentoListaComponent,
-        //AgendamentoDetalheComponent,
-        //AgendamentoCriarComponent
+        AgendamentoDetalheComponent,
+        AgendamentoExcluirComponent,
+        AgendamentoEditarComponent,
+        AgendamentoDetalheComponent,
+        AgendamentoCriarComponent,
     ],
     imports: [
         BrowserModule,

@@ -1,0 +1,45 @@
+<div class="detail-group">
+  <div class="container">
+
+    <div class="title">
+      <h4>Excluir Agendamento</h4>
+      <h4 class="text-danger">Tem certeza de que deseja excluir?</h4>
+    </div>
+
+    <div class="detail">
+      <dl>
+        <dt>idAgendamento: </dt>
+        <dd>{{agendamento.idAgendamento}}</dd>
+      </dl>
+      <dl>
+        <dt>idHospital:</dt>
+        <dd>{{agendamento.idHospital}}</dd>
+      </dl>
+      <dl>
+        <dt>idEspecialidade:</dt>
+        <dd>{{agendamento.idEspecialidade}</dd>
+      </dl>
+      <dl>
+        <dt>idProfissional:</dt>
+        <dd>{{agendamento.idProfissional}}</dd>
+      </dl>
+      <dl>
+        <dt>DataHoraAgendamento:</dt>
+        <dd>{{agendamento.dataHoraAgendamento}}</dd>
+      </dl>
+      <dl>
+        <dt>idBeneficiario:</dt>
+        <dd>{{agendamento.idBeneficiario}</dd>
+      </dl>
+      <dl>
+        <dt>Ativo:</dt>
+        <dd>{{agendamento.ativo}}</dd>
+      </dl>
+    </div>
+
+    <div class="mb-3 row">
+      <button (click)="apagar()" class="exclude">Excluir</button>
+      <button (click)="sair()">Fechar</button>
+    </div>
+  </div>
+</div>
