@@ -39,7 +39,6 @@ import { HospitalDetalheComponent } from './hospital-detalhe/hospital-detalhe.co
 import { HospitalCriarComponent } from './hospital-criar/hospital-criar.component';
 
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
-import { HomeComponent } from './home/home.component';
 //import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
 //import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
 
@@ -73,7 +72,6 @@ import { HomeComponent } from './home/home.component';
         HospitalDetalheComponent,
         HospitalCriarComponent,
         AgendamentoListaComponent,
-        HomeComponent,
         //AgendamentoDetalheComponent,
         //AgendamentoCriarComponent
     ],

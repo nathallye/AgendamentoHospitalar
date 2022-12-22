@@ -1,4 +1,3 @@
-import { HomeComponent } from './home/home.component';
 import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig/listar-agendamentoconfig.component';
 import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig/excluir-agendamentoconfig.component';
 import { EditarAgendamentoconfigComponent } from './components/agendamentoconfig/editar-agendamentoconfig/editar-agendamentoconfig.component';
@@ -39,7 +38,7 @@ const routes: Routes = [
   {path:'agendamentoconfig/detalhe/:id', component:DetalheAgendamentoconfigComponent},
   {path:'agendamentoconfig/editar/:id', component:EditarAgendamentoconfigComponent},
   {path:'agendamentoconfig/excluir/:id', component:ExcluirAgendamentoconfigComponent},
-
+  
   {path:'especialidade', component:ListarEspecialidadesComponent},
   {path:'especialidade/cadastrar', component:CriarEspecialidadeComponent},
   {path:'especialidade/detalhe/:id', component:DetalheEspecialidadeComponent},
@@ -51,22 +50,20 @@ const routes: Routes = [
   { path: 'beneficiarios/criar', component: BeneficiarioCriarComponent },
   { path: 'beneficiarios/editar/:id', component: BeneficiarioEditarComponent },
   { path: 'beneficiarios/exluir/:id', component: BeneficiarioExcluirComponent },
-
+  
   { path: 'profissional', component: ProfissionalListaComponent },
   { path: 'profissional/listarporid/:id', component: ProfissionalDetalheComponent },
   { path: 'profissional/criar', component: ProfissionalCriarComponent },
   { path: 'profissional/editar/:id', component: ProfissionalEditarComponent },
   { path: 'profissional/exluir/:id', component: ProfissionalExcluirComponent },
-
+  
   { path: 'hospital/listartodos', component: HospitalListaComponent },
   { path: 'hospital/listarporid/:id', component: HospitalDetalheComponent },
   { path: 'hospital/criar', component: HospitalCriarComponent },
   { path: 'hospital/editar/:id', component: HospitalEditarComponent },
   { path: 'hospital/exluir/:id', component: HospitalExcluirComponent },
 
-  { path: 'agendamentos/listartodos', component: AgendamentoListaComponent },
-
-  {path: 'home', component: HomeComponent}
+  { path: 'agendamentos/listartodos', component: AgendamentoListaComponent }
 ];
 
 @NgModule({
