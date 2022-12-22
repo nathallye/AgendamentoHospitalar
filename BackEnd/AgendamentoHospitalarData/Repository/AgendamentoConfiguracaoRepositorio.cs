@@ -94,6 +94,9 @@ namespace AgendamentoHospitalar.Repository
                     {
                         NomeHospital = h.Nome,
                         DataHoraFinalAtendimento = b.DataHoraFinalAtendimento,
+                        IdHospital= b.IdHospital,
+                        IdProfissional= b.IdProfissional,
+                        IdEspecialidade = b.IdEspecialidade,
                         DataHoraInicioAtendimento = b.DataHoraInicioAtendimento,
                         IdConfiguracao = b.IdConfiguracao,
                         NomeEspecialidade = c.Nome,
@@ -136,11 +139,15 @@ namespace AgendamentoHospitalar.Repository
                     select new AgendamentoConfigOutputDTO()
                     {
                         NomeHospital = h.Nome,
+                        IdEspecialidade= c.IdEspecialidade,
+                        IdHospital = h.IdHospital,
+                        IdProfissional = x.IdProfissional,
                         DataHoraFinalAtendimento = b.DataHoraFinalAtendimento,
                         DataHoraInicioAtendimento = b.DataHoraInicioAtendimento,
                         IdConfiguracao = b.IdConfiguracao,
                         NomeEspecialidade = c.Nome,
                         NomeProfissional = x.Nome
+                        
                     }
                     ).SingleOrDefault();
         }

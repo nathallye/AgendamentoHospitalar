@@ -1,5 +1,5 @@
-﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Interface;
+﻿using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalarData.DTO.Especialidade;
 using Microsoft.AspNetCore.Mvc;
 
 
@@ -11,9 +11,9 @@ namespace AgendamentoHospitalar.Controllers
     {
         public readonly IEspecialidadeRepositorio _repo;
 
-        public EspecialidadeController( IEspecialidadeRepositorio hospitalRepository)
+        public EspecialidadeController( IEspecialidadeRepositorio repo)
         {
-            _repo = hospitalRepository;
+            _repo = repo;
         }
 
         [HttpPost]
@@ -36,7 +36,7 @@ namespace AgendamentoHospitalar.Controllers
 
         [HttpGet]
         [Route("/ListarEspecialidades")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(List<EspecialidadeDTO>))]
         public IActionResult ListarTodas()
         {
             try
@@ -61,7 +61,7 @@ namespace AgendamentoHospitalar.Controllers
         }
         [HttpGet]
         [Route("/ListarEspecialidades/{id}")]
-        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(int))]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(EspecialidadeDTO))]
         public IActionResult ListarPorId(int id)
         {
             try
@@ -112,8 +112,8 @@ namespace AgendamentoHospitalar.Controllers
         {
             try
             {
-                _repo.Atualizar(novaEspecialidade);
-                return Ok();
+                var linhasAfetadas = _repo.Atualizar(novaEspecialidade);
+                return Ok(linhasAfetadas);
             }
             catch (Exception ex)
             {

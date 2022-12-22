@@ -1,4 +1,4 @@
-﻿using AgendamentoHospitalar.DTO;
+﻿using AgendamentoHospitalarData.DTO.Especialidade;
 
 namespace AgendamentoHospitalar.Interface
 {

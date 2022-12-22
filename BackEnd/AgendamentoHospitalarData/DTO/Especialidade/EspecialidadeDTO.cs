@@ -1,4 +1,4 @@
-﻿namespace AgendamentoHospitalar.DTO
+﻿namespace AgendamentoHospitalarData.DTO.Especialidade
 {
     public class EspecialidadeDTO
     {
