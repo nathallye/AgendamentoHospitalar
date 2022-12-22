@@ -1,0 +1,222 @@
+.ontainer-saude{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 500px;
+}
+.content-topo{
+  display: flex;
+  align-items: center;
+  height: 500px;
+  margin-bottom: 150px;
+}
+.content-topo .text{
+  margin-left: 40px;
+  width: 50%;
+}
+.text .first{
+  position: relative;
+  left: 200px;
+  top: 20px;
+  font-weight: bold;
+  font-size: 48.4513px;
+  line-height: 53px;
+  color: #4200FF;
+}
+.text .second{
+  position: relative;
+  left: 200px;
+  font-weight: bold;
+  font-size: 48.4513px;
+  line-height: 53px;
+  color: #404040;
+}
+.text p{
+  position: relative;
+  width: 80%;
+  left: 200px;
+  font-weight:lighter;
+  font-size: 16px;
+  color: #404040;
+}
+.text .members{
+  position: relative;
+  width: 80%;
+  left: 200px;
+  font-weight:bold;
+  font-size: 16px;
+  color: #404040;
+}
+.text .members a{
+  text-decoration: none;
+  font-weight: 500;
+  color: #4200FF;
+  margin-left: 10px;
+}
+.text .members a:hover{
+  text-decoration: none;
+  color: #6a55a5;
+}
+
+/*INICIO DE SERVIÇOS*/
+.content-services{
+  background-color: #4200FF;
+  height: 400px;
+}
+.content-services h3{
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 72px;
+  color: #ffffff;
+}
+.cards-services{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards-services .card{
+width: 271.59px;
+height: 251.9px;
+margin-right: 20px;
+background: #FFFFFF;
+box-shadow: 0px 2.8743px 17.2458px -0.718575px rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(14.3715px);
+border-radius: 15px;
+align-items: center;
+justify-content: center;
+}
+.cards-services .card img{
+width: 71.23px;
+height: 72.03px;
+}
+.cards-services .card h4{
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+/*INICIO DE MEDICOS*/
+.content-medicos h3{
+  margin-top: 20px;
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 72px;
+  color:#4200FF;
+}
+.content-medicos .group1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+.content-medicos .card-med{
+  width: 417.12px;
+  height: 494.64px;
+  background: #FFFFFF;
+  box-shadow: 0px 3.52453px 21.1472px -0.881132px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(17.6226px);
+  border-radius: 13.0291px;
+  margin-right: 20px;
+}
+.content-medicos .card-med .img1{
+  width: 323.99px;
+  height: 223.23px;
+  margin-left: 46px;
+  margin-top: 45px;
+}
+.content-medicos .card-med .img2{
+  width: 302.28px;
+  height: 235.39px;
+  margin-left: 46px;
+  margin-top: 40px;
+}
+.content-medicos .card-med h4{
+  margin-top: 10px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 35px;
+  text-align: center;
+  color: #404040;
+}
+.content-medicos .card-med p{
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 35px;
+  text-align: center;
+  color: #404040;
+}
+.content-medicos .card-med .raiting{
+  margin-left: 135px;
+}
+.content-medicos .card-med .button{
+  box-sizing: border-box;
+  position: absolute;
+  width: 265.79px;
+  height: 52.12px;
+  border: 0.868607px solid #4200FF;
+  border-radius: 20.8466px;
+  text-align: center;
+  padding: 10px;
+  margin-left: 70px;
+  margin-top: 20px;
+}
+.content-medicos .card-med a{
+  text-decoration: none;
+  color: #4200FF;
+}
+.content-medicos .group2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.content-medicos .card-med .img3,
+.content-medicos .card-med .img4{
+  margin-left: 46px;
+  margin-top: 45px;
+}
+
+/*INICIO DA NEWSLETTER*/
+.content-newsletter{
+  margin-top: 40px;
+  margin-bottom: 10px;
+  background-color: #4200FF;
+  height: 300px;
+}
+.content-newsletter h3{
+  text-align: center;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 72px;
+  color: #ffffff;
+}
+.content-newsletter .input-news{
+width: 814.75px;
+height: 45px;
+background: #FFFFFF;
+border: none;
+border-radius: 8px;
+margin-left: 500px;
+margin-top: 30px;
+}
+.content-newsletter .enviar{
+  margin-left: 10px;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #4200FF;
+  font-weight: bold;
+}
+.content-newsletter .enviar:hover{
+  box-shadow: 0px 2.8743px 17.2458px -0.718575px rgba(199, 14, 236, 0.445);
+  backdrop-filter: blur(14.3715px);
+}
+
