@@ -27,16 +27,7 @@ export class BeneficiarioEditarComponent {
 
         const beneficiario = data as IBeneficiarioDto;
 
-          this.beneficiario = {
-            idBeneficiario: this.idRecebido,
-            nome: this.beneficiario.nome,
-            cpf: this.beneficiario.cpf,
-            numeroCarteirinha: this.beneficiario.numeroCarteirinha,
-            telefone: this.beneficiario.telefone,
-            email: this.beneficiario.email,
-            endereco: this.beneficiario.endereco,
-            ativo: this.beneficiario.ativo
-          }
+          this.beneficiario = beneficiario
         });
     }
   }
