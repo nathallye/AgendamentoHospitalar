@@ -1,5 +1,32 @@
-nav a {
-  font-family: "Raleway";
-  color: white;
+.container-fluid img{
+  margin-right: 60px;
 }
 
+.navbar-nav .nav-link{
+  font-family: "Raleway";
+  color: rgb(71, 71, 71);
+  position: relative;
+
+}
+.navbar-nav a{
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  padding: 0 10px;
+}
+.navbar-nav a:after{
+  content: "";
+  position: absolute;
+  background-color: #4200FF;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: 0.3s;
+}
+.navbar-nav a:hover{
+  font-weight: bold;
+  color: #4200FF;
+}
+.navbar-nav a:hover:after{
+  width: 100%;
+}
