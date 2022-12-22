@@ -1,4 +1,5 @@
-﻿using AgendamentoHospitalar.Dto.Profissional;
+﻿
+using AgendamentoHospitalar.Dto.Profissional;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
 using Microsoft.AspNetCore.Mvc;
