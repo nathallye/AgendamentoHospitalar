@@ -6,21 +6,21 @@
         <label for="agendamentoBeneficiario" class="col-sm-4 col-form-label">Beneficiário</label>
         <select class="form-select" name="ativo" aria-label="ativo">
           <option selected>Selecione uma opção</option>
-          <option *ngFor="let itemBeneficiario of listaBeneficiario" [value]="itemBeneficiario.idBeneficiario" [(ngModel)]="novoAgendamento.idBeneficiario">{{itemBeneficiario.nome}}</option>
+          <option *ngFor="let itemBeneficiario of listaBeneficiario" [value]="itemBeneficiario.idBeneficiario" >{{itemBeneficiario.nome}}</option>
         </select>
         </div>
       <div class="mb-3 row">
         <label for="hospital" class="col-sm-4 col-form-label">Hospital</label>
         <select class="form-select" name="ativo" aria-label="ativo">
           <option selected>Selecione uma opção</option>
-          <option *ngFor="let hospitalItem of listaHospitais" [value]="hospitalItem.idHospital" [(ngModel)]="novoAgendamento.idHospital" >{{hospitalItem.nome}}</option>
+          <option *ngFor="let agendamentoConfigItem of listaAgendamentoConfig"  [value]="agendamentoConfigItem.idHospital" [(ngModel)]="novoAgendamento.idHospital">{{agendamentoConfigItem.nomeHospital}}</option>
         </select>
       </div>
       <div class="mb-3 row">
         <label for="especialidade" class="col-sm-4 col-form-label">Especialidade</label>
-        <select class="form-select" name="ativo" aria-label="ativo">
-          <option selected>Selecione uma opção</option>
-          <option *ngFor="let itemEspecialidade of listaEspecialidade" >{{itemEspecialidade.nome}}</option>
+        <select class="form-select" name="ativo" aria-label="ativo" >
+          <option selected >Selecione uma opção</option>
+          <option *ngFor="let itemEspecialidade of listaEspecialidade">{{itemEspecialidade.nomeEspecialidade}}</option>
         </select>
       </div>
       <div class="mb-3 row">

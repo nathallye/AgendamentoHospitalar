@@ -16,9 +16,17 @@ import IAgendamentoConfiguracao from 'src/app/interfaces/IAgendamentoConfiguraca
   styleUrls: ['./agendamento-criar.component.css']
 })
 export class AgendamentoCriarComponent {
-    novoAgendamento!:IAgendamentoDto;
+    novoAgendamento:IAgendamentoDto = {
+      ativo: true,
+      dataHoraAgendamento: new Date(),
+      idAgendamento: 0,
+      idBeneficiario: 0,
+      idEspecialidade: 0,
+      idHospital: 0,
+      idProfissional: 0,
+    };
     listaAgendamentoConfig:IAgendamentoConfiguracao[] = [];
-    listaEspecialidade:IEspecialidadeDTO[] =[];
+    listaEspecialidade:any[] =[];
     listaProfissional:IProfissionalDto[]=[]
     listaBeneficiario:IBeneficiarioDto[] = [];
     listaHospitais:IHospitalDto[]=[];
@@ -59,13 +67,18 @@ export class AgendamentoCriarComponent {
       }
     })
 
-    this.http.get('https://localhost:7275/ListarEspecialidade',)
+    this.http.get('https://localhost:7275/ListarEspecialidades',)
     .pipe(
       map(response=> Object.values(response))
     )
     .subscribe(data=>{
       for(let i =0; i<data.length;i++){
-        let novaEspecialidade:IEspecialidadeDTO= data[i];
+        let novaEspecialidade:any= {
+          idEspecialidade: data[i].idEspecialidade,
+          nome: data[i].nome,
+          descricao: data[i].descricao,
+          ativo: data[i].ativo
+        };
         this.listaEspecialidade.push(novaEspecialidade)
       }
     })
@@ -80,5 +93,10 @@ export class AgendamentoCriarComponent {
         this.listaProfissional.push(novoProfissional)
       }
     })
+  }
+
+  alterarEspecialidades(){
+    this.listaEspecialidade = this.listaAgendamentoConfig.map(x =>x.idHospital == this.novoAgendamento.idHospital)
+    console.log(`alterei`)
   }
 }
