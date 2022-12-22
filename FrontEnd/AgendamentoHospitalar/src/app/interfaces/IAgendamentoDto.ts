@@ -4,6 +4,7 @@ import { IHospitalDto } from "./IHospitalDto";
 import { IProfissionalDto } from "./IProfissionalDto";
 
 export interface IAgendamentoDto {
+  nome: string;
   idAgendamento: number,
   idBeneficiario: number,
   idHospital: number,

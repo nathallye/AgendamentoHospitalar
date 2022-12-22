@@ -31,6 +31,7 @@ export class BeneficiarioExcluirComponent {
             senha: this.beneficiario.senha,
             idBeneficiario: this.idRecebido,
             nome: this.beneficiario.nome,
+            senha: this.beneficiario.senha,
             cpf: this.beneficiario.cpf,
             numeroCarteirinha: this.beneficiario.numeroCarteirinha,
             telefone: this.beneficiario.telefone,

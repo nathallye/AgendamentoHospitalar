@@ -39,6 +39,6 @@ export class ProfissionalDetalheComponent {
   }
 
   fechar() {
-    this.router.navigate(['profissional/listartodos']);
+    this.router.navigate(['profissional']);
   }
 }

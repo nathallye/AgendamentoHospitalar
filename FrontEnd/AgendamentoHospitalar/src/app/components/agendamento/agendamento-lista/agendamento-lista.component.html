@@ -21,7 +21,7 @@
           <th></th>
         </tr>
       </thead>
-    
+
       <tbody>
         <tr *ngFor="let agendamentoItem of listaAgendamentos">
           <td>{{agendamentoItem.idBeneficiarioNavigation.nome}}</td>
@@ -31,15 +31,12 @@
           <td>{{agendamentoItem.dataHoraAgendamento}}</td>
           <td>{{agendamentoItem.ativo}}</td>
           <td>
-            <!--
-            <i (click)="excluir(beneficiarioItem.idBeneficiario)" class="material-icons">delete</i>
-            <i (click)="editar(beneficiarioItem.idBeneficiario)" class="material-icons">edit</i>
-            <i (click)="listarPorId(beneficiarioItem.idBeneficiario)" class="material-icons">visibility</i>
-            -->
+            <i (click)="excluir(agendamentoItem.idAgendamento)" class="material-icons">delete</i>
+            <i (click)="editar(agendamentoItem.idAgendamento)" class="material-icons">edit</i>
+            <i (click)="listarPorId(agendamentoItem.idAgendamento)" class="material-icons">visibility</i>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
 </div>
-  

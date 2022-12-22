@@ -42,7 +42,7 @@ export class ProfissionalExcluirComponent {
     if (this.profissional.idProfissional !== 0) {
       this.http.delete(`https://localhost:7275/api/Profissional/Excluir/${this.idRecebido}`)
       .subscribe((data) => {
-        this.router.navigate(['profissional/listartodos']);
+        this.router.navigate(['profissional/']);
       });
 
     } else {
@@ -54,6 +54,6 @@ export class ProfissionalExcluirComponent {
   }
 
   sair() {
-    this.router.navigate(['profissional/listartodos']);
+    this.router.navigate(['profissional']);
   }
 }

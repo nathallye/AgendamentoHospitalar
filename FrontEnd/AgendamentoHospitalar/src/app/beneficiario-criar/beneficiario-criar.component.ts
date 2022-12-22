@@ -10,21 +10,27 @@ import { IBeneficiarioDto } from '../interfaces/IBeneficiarioDto';
   styleUrls: ['./beneficiario-criar.component.css']
 })
 export class BeneficiarioCriarComponent {
-  beneficiario: IBeneficiarioDto = {
-  idBeneficiario:0,
-  nome: '',
-  cpf: '',
-  numeroCarteirinha: '',
-  telefone: '',
-  email: '',
-  endereco: '',
-  senha: '',
-  ativo: true
-};
+  beneficiario!: IBeneficiarioDto;
   idRecebido!: number;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
+    this.route.paramMap.subscribe(params => {
+      this.idRecebido = Number(params.get('id'));
+    });
+  }
 
+  ngOnInit(): void {
+    this.beneficiario = {
+      idBeneficiario: this.idRecebido ?? 0,
+      nome: '',
+      senha: '',
+      cpf: '',
+      numeroCarteirinha: '',
+      telefone: '',
+      email: '',
+      endereco: '',
+      ativo: true
+    }
   }
 
 

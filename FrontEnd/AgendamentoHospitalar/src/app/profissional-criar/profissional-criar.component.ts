@@ -35,7 +35,7 @@ export class ProfissionalCriarComponent {
 
         this.http.post('https://localhost:7275/api/Profissional/Criar', this.profissional)
           .subscribe((data) => {
-            this.router.navigate(['profissional/listartodos']);
+            this.router.navigate(['profissional/']);
           });
       } else {
         console.log('Erro na validação');

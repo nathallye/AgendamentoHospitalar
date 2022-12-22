@@ -5,9 +5,9 @@ namespace AgendamentoHospitalar.Interface
 {
     public interface IAgendamentoRepository
     {
-        List<AgendamentoDto> ListarTodos();
+        List<AgendamentoOutDTO> ListarTodos();
         AgendamentoDto ListarPorId(int id);
-        Agendamento Criar(AgendamentoCriarDto agendamento);
+        Agendamento Criar(AgendamentoDto agendamento);
         Agendamento Atualizar(AgendamentoAtualizarDto agendamento);
         int Excluir(int id);
     }

@@ -1,7 +1,7 @@
-﻿using AgendamentoHospitalar.DTO;
-using AgendamentoHospitalar.Entidade;
+﻿using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
 using AgendamentoHospitalar.Repository.Context;
+using AgendamentoHospitalarData.DTO.Especialidade;
 
 namespace AgendamentoHospitalar.Repository
 {

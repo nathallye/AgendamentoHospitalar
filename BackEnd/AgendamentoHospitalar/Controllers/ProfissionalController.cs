@@ -1,7 +1,8 @@
-﻿
+﻿using AgendamentoHospitalar.Dto.Hospital;
 using AgendamentoHospitalar.Dto.Profissional;
 using AgendamentoHospitalar.Entidade;
 using AgendamentoHospitalar.Interface;
+using AgendamentoHospitalar.Repository;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AgendamentoHospitalar.Controllers
@@ -46,6 +47,29 @@ namespace AgendamentoHospitalar.Controllers
             }
         }
 
+        [HttpGet]
+        [Route("ListarPorId/{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(ProfissionalDto))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public IActionResult ListarPorId(int id)
+        {
+            if (id < 1)
+                return NoContent();
+
+            try
+            {
+                ProfissionalDto profissional = _profissionalRepository.ListarPorId(id);
+
+                if (profissional == null)
+                    return NoContent();
+
+                return Ok(profissional);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
         //Criar
         [HttpPost]
         [Route("Criar")]

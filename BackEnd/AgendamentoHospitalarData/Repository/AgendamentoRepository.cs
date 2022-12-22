@@ -14,22 +14,32 @@ namespace AgendamentoHospitalar.Repository
             _context = context;
         }
 
-        public List<AgendamentoDto> ListarTodos()
+        public List<AgendamentoOutDTO> ListarTodos()
         {
-            return _context.Agendamentos.Select(s => new AgendamentoDto()
-            {
-                IdAgendamento = s.IdAgendamento,
-                IdBeneficiario = s.IdBeneficiario,
-                IdBeneficiarioNavigation = s.IdBeneficiarioNavigation,
-                IdHospital = s.IdHospital,
-                IdHospitalNavigation = s.IdHospitalNavigation,
-                IdEspecialidade = s.IdEspecialidade,
-                IdEspecialidadeNavigation = s.IdEspecialidadeNavigation,
-                IdProfissional = s.IdProfissional,
-                IdProfissionalNavigation = s.IdProfissionalNavigation,
-                DataHoraAgendamento = s.DataHoraAgendamento,
-                Ativo = s.Ativo
-            }).ToList();
+            return (from a in _context.Agendamentos
+
+                    from h in _context.Hospitais
+                    where h.IdHospital == a.IdHospital
+
+                    from b in _context.Beneficiarios
+                    where b.IdBeneficiario == a.IdBeneficiario
+
+                    from e in _context.Especialidades
+                    where e.IdEspecialidade == a.IdEspecialidade
+
+                    from p in _context.Profissionais
+                    where p.IdProfissional == a.IdProfissional
+
+                    select new AgendamentoOutDTO()
+                    {
+                        Ativo = a.Ativo,
+                        DataHoraAgendamento = a.DataHoraAgendamento,
+                        IdAgendamento = a.IdAgendamento,
+                        NomeBeneficiario = b.Nome,
+                        NomeEspecialidade = e.Nome,
+                        NomeHospital = h.Nome,
+                        NomeProfissional = p.Nome
+                    }).ToList();
         }
 
         public AgendamentoDto ListarPorId(int id)
@@ -40,13 +50,9 @@ namespace AgendamentoHospitalar.Repository
                     {
                         IdAgendamento = t.IdAgendamento,
                         IdBeneficiario = t.IdBeneficiario,
-                        IdBeneficiarioNavigation = t.IdBeneficiarioNavigation,
                         IdHospital = t.IdHospital,
-                        IdHospitalNavigation = t.IdHospitalNavigation,
                         IdEspecialidade = t.IdEspecialidade,
-                        IdEspecialidadeNavigation = t.IdEspecialidadeNavigation,
                         IdProfissional = t.IdProfissional,
-                        IdProfissionalNavigation = t.IdProfissionalNavigation,
                         DataHoraAgendamento = t.DataHoraAgendamento,
                         Ativo = t.Ativo
                     })
@@ -54,7 +60,7 @@ namespace AgendamentoHospitalar.Repository
                     ?? new AgendamentoDto();
         }
 
-        public Agendamento Criar(AgendamentoCriarDto agendamento)
+        public Agendamento Criar(AgendamentoDto agendamento)
         {
             Agendamento agendamentoEntidade = new Agendamento()
             {
