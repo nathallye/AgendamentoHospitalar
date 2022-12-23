@@ -26,7 +26,7 @@ export class CriarEspecialidadeComponent {
     idEspecialidade: 0
     })
     .subscribe(data=>{
-      this.router.navigate([`especialidade/detalhe`])
+      this.router.navigate([`especialidade`])
     })
   }
 

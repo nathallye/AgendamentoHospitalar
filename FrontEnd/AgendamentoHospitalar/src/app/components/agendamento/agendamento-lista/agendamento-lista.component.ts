@@ -1,3 +1,4 @@
+import  IAgendamentoConfiguracao  from 'src/app/interfaces/IAgendamentoConfiguracao';
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { IAgendamentoDto } from '../../../interfaces/IAgendamentoDto';
   styleUrls: ['./agendamento-lista.component.css']
 })
 export class AgendamentoListaComponent {
-  listaAgendamentos: IAgendamentoDto[] = [];
+  listaAgendamentos: IAgendamentoConfiguracao[] = [];
 
   constructor(private http: HttpClient, private router: Router) {
     this.listarTodos();
@@ -30,7 +31,7 @@ export class AgendamentoListaComponent {
       .subscribe((data) => {
         for (let i = 0; i < data.length; i++) {
           let contentJson: any = data[i];
-          this.listaAgendamentos.push(contentJson as IAgendamentoDto);
+          this.listaAgendamentos.push(contentJson as IAgendamentoConfiguracao);
         }
       });
   }

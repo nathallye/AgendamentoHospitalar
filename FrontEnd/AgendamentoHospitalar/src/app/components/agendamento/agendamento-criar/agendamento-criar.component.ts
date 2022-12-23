@@ -24,7 +24,7 @@ export class AgendamentoCriarComponent {
     listaHospitais:IHospitalDto[]=[];
     selecao:number = 1;
 
-    agendConfig! : IAgendamentoConfiguracaoDTO;
+    agendConfig! : IAgendamentoConfiguracao;
     idRecebido!: number;
 
     searchText = '';
@@ -90,16 +90,24 @@ export class AgendamentoCriarComponent {
       }
     })
   }
+          salvar(agendamento: IAgendamentoConfiguracao) {
 
-  salvar() {
+            let agendamentoCriar = {
+              idBeneficiario: 1,
+              idHospital: agendamento.idHospital,
+              idEspecialidade: agendamento.idEspecialidade,
+              idProfissional: agendamento.idProfissional,
+              dataHoraAgendamento: agendamento.dataHoraInicioAtendimento,
+              ativo: true
+            }
+            console.log(agendamento);
+                this.http.post('https://localhost:7275/api/Agendamentos/Criar', agendamentoCriar )
+                  .subscribe((data) => {
+                    this.router.navigate(['agendamentos/listartodos']);
+                  });
 
 
-        this.http.post('https://localhost:7275/api/Agendamentos/Criar', this.agendConfig)
-          .subscribe((data) => {
-            this.router.navigate(['agendamentos/listartodos']);
-          });
-
-
+          }
   }
 
-}
+

@@ -1,5 +1,6 @@
 export default interface IAgendamentoConfiguracaoDTO {
   idConfiguracao: number;
+  idBeneficiario: number;
   nomeHospital:string;
   idHospital:number;
   nomeEspecialidade:string;

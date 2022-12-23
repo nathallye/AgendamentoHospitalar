@@ -12,28 +12,26 @@
     <table class="table table-hover">
       <thead class="bg-secondary text-white">
         <tr>
-          <th>Beneficiário</th>
-          <th>Hospital</th>
+
+          <th>Data</th>
           <th>Especialidade</th>
+          <th>Hospital</th>
           <th>Profissional</th>
-          <th>Data e Hora</th>
-          <th>Ativo</th>
+          <!-- <th>Ativo</th> -->
           <th></th>
         </tr>
       </thead>
 
       <tbody>
         <tr *ngFor="let agendamentoItem of listaAgendamentos">
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td >{{agendamentoItem.dataHoraInicioAtendimento}}</td>
+          <td >{{agendamentoItem.nomeEspecialidade}}</td>
+          <td >{{agendamentoItem.nomeHospital}}</td>
+          <td >{{agendamentoItem.nomeProfissional}}</td>
           <td>
-             <i (click)="excluir(agendamentoItem.idAgendamento)" class="material-icons">delete</i>
+             <!-- <i (click)="excluir(agendamentoItem.idAgendamento" class="material-icons">delete</i>
             <i (click)="editar(agendamentoItem.idAgendamento)" class="material-icons">edit</i>
-            <i (click)="listarPorId(agendamentoItem.idAgendamento)" class="material-icons">visibility</i>
+            <i (click)="listarPorId(agendamentoItem.idAgendamento)" class="material-icons">visibility</i> -->
            </td>
       </tr>
     </tbody>
