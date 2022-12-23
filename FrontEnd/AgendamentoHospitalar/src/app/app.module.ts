@@ -22,11 +22,11 @@ import { EditarEspecialidadeComponent } from './components/especialidades/editar
 import { DetalheEspecialidadeComponent } from './components/especialidades/detalhe-especialidade';
 import { ExcluirEspecialidadeComponent } from './components/especialidades/excluir-especialidade';
 
-import { BeneficiarioListaComponent } from './beneficiario/beneficiario-lista';
-import { BeneficiarioDetalheComponent } from './beneficiario/beneficiario-detalhe';
-import { BeneficiarioCriarComponent } from './beneficiario/beneficiario-criar';
-import { BeneficiarioEditarComponent } from './beneficiario/beneficiario-editar';
-import { BeneficiarioExcluirComponent } from './beneficiario/beneficiario-excluir';
+import { BeneficiarioListaComponent } from './components/beneficiario/beneficiario-lista';
+import { BeneficiarioDetalheComponent } from './components/beneficiario/beneficiario-detalhe';
+import { BeneficiarioCriarComponent } from './components/beneficiario/beneficiario-criar';
+import { BeneficiarioEditarComponent } from './components/beneficiario/beneficiario-editar';
+import { BeneficiarioExcluirComponent } from './components/beneficiario/beneficiario-excluir';
 
 import { ProfissionalListaComponent } from './profissional-lista/profissional-lista.component';
 import { ProfissionalExcluirComponent } from './profissional-excluir/profissional-excluir.component';
