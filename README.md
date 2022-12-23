@@ -4,7 +4,7 @@
 
 ### Desafio
 
-Desenvolvimento de um sistema agendamento de consultas médicas. 
+Desenvolvimento de um sistema de agendamento de consultas médicas.
 
 ### Integrantes
 
