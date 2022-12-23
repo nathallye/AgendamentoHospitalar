@@ -1,15 +1,60 @@
-<div class="form-group">
+<div class="form-group p-5">
   <form>
     <h4>Agendamento</h4>
     <hr />
+
+    <h4>Digite a Especialidade</h4>
+    <input class="form-control" type="text" name="search" placeholder="Digite aqui a especialidade" [(ngModel)]="searchText">
+
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Data</th>
+          <th scope="col">Especialidade</th>
+          <th scope="col">Hospital</th>
+          <th scope="col">Médico(a)</th>
+          <th scope="col">Agendar</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let itemAgendamento of listaAgendamentoConfig | filter: searchText">
+          <td >{{itemAgendamento.dataHoraInicioAtendimento}}</td>
+          <td >{{itemAgendamento.nomeEspecialidade}}</td>
+          <td >{{itemAgendamento.nomeHospital}}</td>
+          <td >{{itemAgendamento.nomeProfissional}}</td>
+          <td><button (click)="salvar()" class="save">Salvar</button></td>
+
+        </tr>
+
+      </tbody>
+    </table>
+
+
       <div class="mb-3 row">
+
+      </div>
+    </form>
+  </div>
+
+
+
+
+
+
+        <!-- <div class="mb-3 row">
+          <div class="mb-3 row">
         <label for="agendamentoBeneficiario" class="col-sm-4 col-form-label">Beneficiário</label>
         <select class="form-select" name="ativo" aria-label="ativo">
           <option selected>Selecione uma opção</option>
-          <option *ngFor="let itemBeneficiario of listaBeneficiario" [value]="itemBeneficiario.idBeneficiario" [(ngModel)]="novoAgendamento.idBeneficiario">{{itemBeneficiario.nome}}</option>
+          <option *ngFor="let itemBeneficiario of listaBeneficiario">{{itemBeneficiario.nome}}</option>
+        </select>
+
+        <label for="agendamentoConfig" class="col-sm-4 col-form-label">Especialidade</label>
+        <select class="form-select" name="ativo" aria-label="ativo">
+          <option selected>Selecione uma opção</option>
+          <option *ngFor="let itemAgendamento of listaAgendamentoConfig">{{itemAgendamento.nomeEspecialidade}}</option>
         </select>
         </div>
-      <div class="mb-3 row">
         <label for="hospital" class="col-sm-4 col-form-label">Hospital</label>
         <select class="form-select" name="ativo" aria-label="ativo">
           <option selected>Selecione uma opção</option>
@@ -42,12 +87,4 @@
         <div class="col-sm-6">
           <input type="checkbox" class="form-check-input" id="ativo"  name="ativo">
         </div>
-      </div>
-
-      <div class="mb-3 row">
-        <button  class="save">Cadastrar</button>
-        <button >Fechar</button>
-      </div>
-    </form>
-  </div>
-
+      </div> -->

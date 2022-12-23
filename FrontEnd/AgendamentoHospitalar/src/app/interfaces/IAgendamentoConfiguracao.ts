@@ -6,6 +6,6 @@ export default interface IAgendamentoConfiguracaoDTO {
   idEspecialidade:number;
   nomeProfissional:string;
   idProfissional:number;
-  dataHoraInicioAtendimento:Date;
-  dataHoraFinalAtendimento:Date;
+  dataHoraInicioAtendimento:string;
+  dataHoraFinalAtendimento:string;
 }

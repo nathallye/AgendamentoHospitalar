@@ -24,6 +24,15 @@ export class AgendamentoCriarComponent {
     listaHospitais:IHospitalDto[]=[];
     selecao:number = 1;
 
+    agendConfig! : IAgendamentoConfiguracaoDTO;
+    idRecebido!: number;
+
+    searchText = '';
+
+    ngOnInit(): void{
+
+    }
+
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
     this.http.get('https://localhost:7275/ListarAgendamentoConfiguracao')
@@ -59,7 +68,7 @@ export class AgendamentoCriarComponent {
       }
     })
 
-    this.http.get('https://localhost:7275/ListarEspecialidade',)
+    this.http.get('https://localhost:7275/ListarEspecialidades',)
     .pipe(
       map(response=> Object.values(response))
     )
@@ -81,4 +90,16 @@ export class AgendamentoCriarComponent {
       }
     })
   }
+
+  salvar() {
+
+
+        this.http.post('https://localhost:7275/api/Agendamentos/Criar', this.agendConfig)
+          .subscribe((data) => {
+            this.router.navigate(['agendamentos/listartodos']);
+          });
+
+
+  }
+
 }

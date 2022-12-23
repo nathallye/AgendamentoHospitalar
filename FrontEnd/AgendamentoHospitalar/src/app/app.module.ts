@@ -42,6 +42,8 @@ import { AgendamentoListaComponent } from './components/agendamento/agendamento-
 import { HomeComponent } from './home/home.component';
 import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe/agendamento-detalhe.component';
 import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+//import { SearchPipe } from './search.pipe';
 
 @NgModule({
     declarations: [
@@ -74,14 +76,17 @@ import { AgendamentoCriarComponent } from './components/agendamento/agendamento-
         HospitalCriarComponent,
         AgendamentoListaComponent,
         AgendamentoDetalheComponent,
-        AgendamentoCriarComponent
+        AgendamentoCriarComponent,
+        //SearchPipe
     ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         HttpClientModule,
         FormsModule,
-        BrowserAnimationsModule
+        BrowserAnimationsModule,
+        Ng2SearchPipeModule
+
     ],
     providers: [],
     bootstrap: [AppComponent]

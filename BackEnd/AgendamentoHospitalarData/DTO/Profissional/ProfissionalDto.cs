@@ -1,4 +1,5 @@
-﻿namespace AgendamentoHospitalar.Dto.Profissional
+﻿
+namespace AgendamentoHospitalar.Dto.Profissional
 {
     public class ProfissionalDto
     {
@@ -11,5 +12,6 @@
         public string? Endereco { get; set; }
 
         public bool Ativo { get; set; }
+
     }
 }
