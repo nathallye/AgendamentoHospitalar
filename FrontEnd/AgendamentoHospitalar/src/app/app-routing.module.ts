@@ -1,7 +1,7 @@
 import { AgendamentoEditarComponent } from './components/agendamento/agendamento-editar';
 import { AgendamentoExcluirComponent } from './components/agendamento/agendamento-excluir';
 import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar';
-import { HomeComponent } from './home/home.component';
+
 import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig';
 import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig';
 import { EditarAgendamentoconfigComponent } from './components/agendamentoconfig/editar-agendamentoconfig';
@@ -31,6 +31,8 @@ import { HospitalDetalheComponent } from './hospital-detalhe';
 import { HospitalCriarComponent } from './hospital-criar';
 import { HospitalEditarComponent } from './hospital-editar';
 import { HospitalExcluirComponent } from './hospital-excluir/hospital-excluir.component';
+
+import { HomeComponent } from './components/home';
 
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';

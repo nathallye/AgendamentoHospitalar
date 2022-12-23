@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AppComponent } from './app.component';
-import { HeaderComponent } from "./header/header.component";
+import { HeaderComponent } from "./components/header";
 
 import { CriarAgendamentoconfigComponent } from './components/agendamentoconfig/criar-agendamentoconfig';
 import { DetalheAgendamentoconfigComponent } from './components/agendamentoconfig/detalhe-agendamentoconfig';
@@ -44,7 +44,7 @@ import { AgendamentoListaComponent } from './components/agendamento/agendamento-
 import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe';
 import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar';
 
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './components/home';
 
 //import { SearchPipe } from './search.pipe';
 
