@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
-import { IBeneficiarioDto } from '../interfaces/IBeneficiarioDto';
+import { IBeneficiarioDto } from '../../interfaces/IBeneficiarioDto';
 
 @Component({
   selector: 'app-beneficiario-lista',
