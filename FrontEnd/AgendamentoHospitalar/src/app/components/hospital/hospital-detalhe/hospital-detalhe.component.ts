@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { IHospitalDto } from '../interfaces/IHospitalDto';
+import { IHospitalDto } from '../../../interfaces/IHospitalDto';
 
 @Component({
-  selector: 'app-hospital-editar',
-  templateUrl: './hospital-editar.component.html',
-  styleUrls: ['./hospital-editar.component.css']
+  selector: 'app-hospital-detalhe',
+  templateUrl: './hospital-detalhe.component.html',
+  styleUrls: ['./hospital-detalhe.component.css']
 })
-export class HospitalEditarComponent {
+export class HospitalDetalheComponent {
   hospital!: IHospitalDto;
   idRecebido!: number;
 
@@ -40,34 +40,7 @@ export class HospitalEditarComponent {
     }
   }
 
-  salvar() {
-    if (this.validarInformacoes()) {
-      if (this.hospital.idHospital != 0) {
-
-        this.http.patch(`https://localhost:7275/api/Hospital/Atualizar/${this.idRecebido}`, this.hospital)
-          .subscribe((data) => {
-            this.router.navigate(['hospital/listartodos']);
-          });
-      } else {
-        console.log('Erro na validação');
-        // TRATAMENTO DE ERRO
-        // ALERTA
-        // BORDA VERMELHA
-      }
-    }
-  }
-
-  validarInformacoes(): boolean {
-    if (this.hospital.nome == '') {
-      return false;
-    }
-
-    // VALIDAR COM REGEX
-
-    return true;
-  }
-
-  sair() {
+  fechar() {
     this.router.navigate(['hospital/listartodos']);
   }
 }

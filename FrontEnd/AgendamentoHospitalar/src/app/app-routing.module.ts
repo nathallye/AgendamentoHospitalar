@@ -26,11 +26,11 @@ import { ProfissionalCriarComponent } from './profissional-criar';
 import { ProfissionalEditarComponent } from './profissional-editar';
 import { ProfissionalExcluirComponent } from './profissional-excluir';
 
-import { HospitalListaComponent } from './hospital-lista';
-import { HospitalDetalheComponent } from './hospital-detalhe';
-import { HospitalCriarComponent } from './hospital-criar';
-import { HospitalEditarComponent } from './hospital-editar';
-import { HospitalExcluirComponent } from './hospital-excluir/hospital-excluir.component';
+import { HospitalListaComponent } from './components/hospital/hospital-lista';
+import { HospitalDetalheComponent } from './components/hospital/hospital-detalhe';
+import { HospitalCriarComponent } from './components/hospital/hospital-criar';
+import { HospitalEditarComponent } from './components/hospital/hospital-editar';
+import { HospitalExcluirComponent } from './components/hospital/hospital-excluir';
 
 import { HomeComponent } from './components/home';
 
@@ -39,17 +39,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
 
 const routes: Routes = [
-  { path:'agendamentoconfig', component:ListarAgendamentoconfigComponent },
-  { path:'agendamentoconfig/cadastrar', component:CriarAgendamentoconfigComponent },
-  { path:'agendamentoconfig/detalhe/:id', component:DetalheAgendamentoconfigComponent },
-  { path:'agendamentoconfig/editar/:id', component:EditarAgendamentoconfigComponent },
-  { path:'agendamentoconfig/excluir/:id', component:ExcluirAgendamentoconfigComponent },
+  { path: 'agendamentoconfig', component: ListarAgendamentoconfigComponent },
+  { path: 'agendamentoconfig/cadastrar', component: CriarAgendamentoconfigComponent },
+  { path: 'agendamentoconfig/detalhe/:id', component: DetalheAgendamentoconfigComponent },
+  { path: 'agendamentoconfig/editar/:id', component: EditarAgendamentoconfigComponent },
+  { path: 'agendamentoconfig/excluir/:id', component: ExcluirAgendamentoconfigComponent },
 
-  { path:'especialidade', component:ListarEspecialidadesComponent },
-  { path:'especialidade/cadastrar', component:CriarEspecialidadeComponent },
-  { path:'especialidade/detalhe/:id', component:DetalheEspecialidadeComponent },
-  { path:'especialidade/editar/:id', component:EditarEspecialidadeComponent },
-  { path:'especialidade/excluir/:id', component:ExcluirEspecialidadeComponent },
+  { path: 'especialidade', component: ListarEspecialidadesComponent },
+  { path: 'especialidade/cadastrar', component: CriarEspecialidadeComponent },
+  { path: 'especialidade/detalhe/:id', component: DetalheEspecialidadeComponent },
+  { path: 'especialidade/editar/:id', component: EditarEspecialidadeComponent },
+  { path: 'especialidade/excluir/:id', component: ExcluirEspecialidadeComponent },
 
   { path: 'beneficiarios/listartodos', component: BeneficiarioListaComponent },
   { path: 'beneficiarios/listarporid/:id', component: BeneficiarioDetalheComponent },

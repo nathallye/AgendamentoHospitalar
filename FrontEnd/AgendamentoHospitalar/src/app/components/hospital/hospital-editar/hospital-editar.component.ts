@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { IHospitalDto } from '../interfaces/IHospitalDto';
+import { IHospitalDto } from '../../../interfaces/IHospitalDto';
 
 @Component({
-  selector: 'app-hospital-criar',
-  templateUrl: './hospital-criar.component.html',
-  styleUrls: ['./hospital-criar.component.css']
+  selector: 'app-hospital-editar',
+  templateUrl: './hospital-editar.component.html',
+  styleUrls: ['./hospital-editar.component.css']
 })
-export class HospitalCriarComponent {
+export class HospitalEditarComponent {
   hospital!: IHospitalDto;
   idRecebido!: number;
 
@@ -20,22 +20,31 @@ export class HospitalCriarComponent {
   }
 
   ngOnInit(): void {
-    this.hospital = {
-      idHospital: this.idRecebido ?? 0,
-      nome: '',
-      cnpj: '',
-      endereco: '',
-      telefone: '',
-      cnes: '',
-      ativo: true
+    if (this.idRecebido) {
+      this.http
+        .get(`https://localhost:7275/api/Hospital/ListarPorId/${this.idRecebido}`)
+        .subscribe((data) => {
+
+          this.hospital = data as IHospitalDto;
+
+          this.hospital = {
+            idHospital: this.idRecebido,
+            nome: this.hospital.nome,
+            cnpj: this.hospital.cnpj,
+            endereco: this.hospital.endereco,
+            telefone: this.hospital.telefone,
+            cnes: this.hospital.cnes,
+            ativo: this.hospital.ativo
+          }
+        });
     }
   }
 
   salvar() {
     if (this.validarInformacoes()) {
-      if (this.hospital.idHospital == 0) {
+      if (this.hospital.idHospital != 0) {
 
-        this.http.post('https://localhost:7275/api/Hospitais/Criar', this.hospital)
+        this.http.patch(`https://localhost:7275/api/Hospital/Atualizar/${this.idRecebido}`, this.hospital)
           .subscribe((data) => {
             this.router.navigate(['hospital/listartodos']);
           });

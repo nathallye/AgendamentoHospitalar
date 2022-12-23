@@ -2,15 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { IBeneficiarioDto } from '../../../interfaces/IBeneficiarioDto';
+import { IHospitalDto } from '../../../interfaces/IHospitalDto';
 
 @Component({
-  selector: 'app-beneficiario-criar',
-  templateUrl: './beneficiario-criar.component.html',
-  styleUrls: ['./beneficiario-criar.component.css']
+  selector: 'app-hospital-criar',
+  templateUrl: './hospital-criar.component.html',
+  styleUrls: ['./hospital-criar.component.css']
 })
-export class BeneficiarioCriarComponent {
-  beneficiario!: IBeneficiarioDto;
+export class HospitalCriarComponent {
+  hospital!: IHospitalDto;
   idRecebido!: number;
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
@@ -20,27 +20,24 @@ export class BeneficiarioCriarComponent {
   }
 
   ngOnInit(): void {
-    this.beneficiario = {
-      idBeneficiario: this.idRecebido ?? 0,
+    this.hospital = {
+      idHospital: this.idRecebido ?? 0,
       nome: '',
-      senha: '',
-      cpf: '',
-      numeroCarteirinha: '',
-      telefone: '',
-      email: '',
+      cnpj: '',
       endereco: '',
+      telefone: '',
+      cnes: '',
       ativo: true
     }
   }
 
-
   salvar() {
     if (this.validarInformacoes()) {
-      if (this.beneficiario.idBeneficiario == 0) {
-        console.log(this.beneficiario)
-        this.http.post('https://localhost:7275/api/Beneficiarios/Criar', this.beneficiario)
+      if (this.hospital.idHospital == 0) {
+
+        this.http.post('https://localhost:7275/api/Hospitais/Criar', this.hospital)
           .subscribe((data) => {
-            this.router.navigate(['beneficiarios/listartodos']);
+            this.router.navigate(['hospital/listartodos']);
           });
       } else {
         console.log('Erro na validação');
@@ -52,7 +49,7 @@ export class BeneficiarioCriarComponent {
   }
 
   validarInformacoes(): boolean {
-    if (this.beneficiario.nome == '') {
+    if (this.hospital.nome == '') {
       return false;
     }
 
@@ -62,6 +59,6 @@ export class BeneficiarioCriarComponent {
   }
 
   sair() {
-    this.router.navigate(['beneficiarios/listartodos']);
+    this.router.navigate(['hospital/listartodos']);
   }
 }

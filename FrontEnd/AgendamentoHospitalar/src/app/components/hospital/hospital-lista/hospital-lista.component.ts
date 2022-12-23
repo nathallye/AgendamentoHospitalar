@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
-import { IHospitalDto } from '../interfaces/IHospitalDto';
+import { IHospitalDto } from '../../../interfaces/IHospitalDto';
 
 @Component({
   selector: 'app-hospital-lista',

@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { IHospitalDto } from '../interfaces/IHospitalDto';
+import { IHospitalDto } from '../../../interfaces/IHospitalDto';
 
 @Component({
-  selector: 'app-hospital-detalhe',
-  templateUrl: './hospital-detalhe.component.html',
-  styleUrls: ['./hospital-detalhe.component.css']
+  selector: 'app-hospital-excluir',
+  templateUrl: './hospital-excluir.component.html',
+  styleUrls: ['./hospital-excluir.component.css']
 })
-export class HospitalDetalheComponent {
+export class HospitalExcluirComponent {
   hospital!: IHospitalDto;
   idRecebido!: number;
 
@@ -22,7 +22,7 @@ export class HospitalDetalheComponent {
   ngOnInit(): void {
     if (this.idRecebido) {
       this.http
-        .get(`https://localhost:7275/api/Hospital/ListarPorId/${this.idRecebido}`)
+        .get(`https://localhost:7275/api/Hospitais/ListarPorId/${this.idRecebido}`)
         .subscribe((data) => {
 
           this.hospital = data as IHospitalDto;
@@ -40,7 +40,22 @@ export class HospitalDetalheComponent {
     }
   }
 
-  fechar() {
+  apagar() {
+    if (this.hospital.idHospital !== 0) {
+      this.http.delete(`https://localhost:7275/api/Hospitais/Excluir/${this.idRecebido}`)
+      .subscribe((data) => {
+        this.router.navigate(['hospital/listartodos']);
+      });
+
+    } else {
+      console.log('Erro na validação');
+      // TRATAMENTO DE ERRO
+      // ALERTA
+      // BORDA VERMELHA
+    }
+  }
+
+  sair() {
     this.router.navigate(['hospital/listartodos']);
   }
 }

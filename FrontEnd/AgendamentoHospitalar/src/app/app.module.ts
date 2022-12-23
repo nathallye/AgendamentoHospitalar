@@ -34,11 +34,11 @@ import { ProfissionalEditarComponent } from './profissional-editar/profissional-
 import { ProfissionalDetalheComponent } from './profissional-detalhe/profissional-detalhe.component';
 import { ProfissionalCriarComponent } from './profissional-criar/profissional-criar.component';
 
-import { HospitalListaComponent } from './hospital-lista/hospital-lista.component';
-import { HospitalExcluirComponent } from './hospital-excluir/hospital-excluir.component';
-import { HospitalEditarComponent } from './hospital-editar/hospital-editar.component';
-import { HospitalDetalheComponent } from './hospital-detalhe/hospital-detalhe.component';
-import { HospitalCriarComponent } from './hospital-criar/hospital-criar.component';
+import { HospitalListaComponent } from './components/hospital/hospital-lista';
+import { HospitalExcluirComponent } from './components/hospital/hospital-excluir';
+import { HospitalEditarComponent } from './components/hospital/hospital-editar';
+import { HospitalDetalheComponent } from './components/hospital/hospital-detalhe';
+import { HospitalCriarComponent } from './components/hospital/hospital-criar';
 
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista';
 import { AgendamentoDetalheComponent } from './components/agendamento/agendamento-detalhe';
