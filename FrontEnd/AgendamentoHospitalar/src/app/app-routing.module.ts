@@ -1,18 +1,18 @@
-import { AgendamentoEditarComponent } from './components/agendamento/agendamento-editar/agendamento-editar.component';
-import { AgendamentoExcluirComponent } from './components/agendamento/agendamento-excluir/agendamento-excluir.component';
-import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar/agendamento-criar.component';
+import { AgendamentoEditarComponent } from './components/agendamento/agendamento-editar';
+import { AgendamentoExcluirComponent } from './components/agendamento/agendamento-excluir';
+import { AgendamentoCriarComponent } from './components/agendamento/agendamento-criar';
 import { HomeComponent } from './home/home.component';
-import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig/listar-agendamentoconfig.component';
-import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig/excluir-agendamentoconfig.component';
-import { EditarAgendamentoconfigComponent } from './components/agendamentoconfig/editar-agendamentoconfig/editar-agendamentoconfig.component';
-import { DetalheAgendamentoconfigComponent } from './components/agendamentoconfig/detalhe-agendamentoconfig/detalhe-agendamentoconfig.component';
-import { CriarAgendamentoconfigComponent } from './components/agendamentoconfig/criar-agendamentoconfig/criar-agendamentoconfig.component';
+import { ListarAgendamentoconfigComponent } from './components/agendamentoconfig/listar-agendamentoconfig';
+import { ExcluirAgendamentoconfigComponent } from './components/agendamentoconfig/excluir-agendamentoconfig';
+import { EditarAgendamentoconfigComponent } from './components/agendamentoconfig/editar-agendamentoconfig';
+import { DetalheAgendamentoconfigComponent } from './components/agendamentoconfig/detalhe-agendamentoconfig';
+import { CriarAgendamentoconfigComponent } from './components/agendamentoconfig/criar-agendamentoconfig';
 
-import { ExcluirEspecialidadeComponent } from './components/especialidades/excluir-especialidade/excluir-especialidade.component';
-import { DetalheEspecialidadeComponent } from './components/especialidades/detalhe-especialidade/detalhe-especialidade.component';
-import { EditarEspecialidadeComponent } from './components/especialidades/editar-especialidade/editar-especialidade.component';
-import { CriarEspecialidadeComponent } from './components/especialidades/criar-especialidade/criar-especialidade.component';
-import { ListarEspecialidadesComponent } from './components/especialidades/listar-especialidades/listar-especialidades.component';
+import { ExcluirEspecialidadeComponent } from './components/especialidades/excluir-especialidade';
+import { DetalheEspecialidadeComponent } from './components/especialidades/detalhe-especialidade';
+import { EditarEspecialidadeComponent } from './components/especialidades/editar-especialidade';
+import { CriarEspecialidadeComponent } from './components/especialidades/criar-especialidade';
+import { ListarEspecialidadesComponent } from './components/especialidades/listar-especialidades';
 
 import { BeneficiarioListaComponent } from './beneficiario/beneficiario-lista';
 import { BeneficiarioDetalheComponent } from './beneficiario/beneficiario-detalhe';
@@ -37,17 +37,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AgendamentoListaComponent } from './components/agendamento/agendamento-lista/agendamento-lista.component';
 
 const routes: Routes = [
-  {path:'agendamentoconfig', component:ListarAgendamentoconfigComponent},
-  {path:'agendamentoconfig/cadastrar', component:CriarAgendamentoconfigComponent},
-  {path:'agendamentoconfig/detalhe/:id', component:DetalheAgendamentoconfigComponent},
-  {path:'agendamentoconfig/editar/:id', component:EditarAgendamentoconfigComponent},
-  {path:'agendamentoconfig/excluir/:id', component:ExcluirAgendamentoconfigComponent},
+  { path:'agendamentoconfig', component:ListarAgendamentoconfigComponent },
+  { path:'agendamentoconfig/cadastrar', component:CriarAgendamentoconfigComponent },
+  { path:'agendamentoconfig/detalhe/:id', component:DetalheAgendamentoconfigComponent },
+  { path:'agendamentoconfig/editar/:id', component:EditarAgendamentoconfigComponent },
+  { path:'agendamentoconfig/excluir/:id', component:ExcluirAgendamentoconfigComponent },
 
-  {path:'especialidade', component:ListarEspecialidadesComponent},
-  {path:'especialidade/cadastrar', component:CriarEspecialidadeComponent},
-  {path:'especialidade/detalhe/:id', component:DetalheEspecialidadeComponent},
-  {path:'especialidade/editar/:id', component:EditarEspecialidadeComponent},
-  {path:'especialidade/excluir/:id', component:ExcluirEspecialidadeComponent},
+  { path:'especialidade', component:ListarEspecialidadesComponent },
+  { path:'especialidade/cadastrar', component:CriarEspecialidadeComponent },
+  { path:'especialidade/detalhe/:id', component:DetalheEspecialidadeComponent },
+  { path:'especialidade/editar/:id', component:EditarEspecialidadeComponent },
+  { path:'especialidade/excluir/:id', component:ExcluirEspecialidadeComponent },
 
   { path: 'beneficiarios/listartodos', component: BeneficiarioListaComponent },
   { path: 'beneficiarios/listarporid/:id', component: BeneficiarioDetalheComponent },

@@ -1,0 +1,1 @@
+export * from './agendamento-lista.component';
