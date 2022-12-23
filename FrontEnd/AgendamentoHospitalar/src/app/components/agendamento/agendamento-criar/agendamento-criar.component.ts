@@ -30,9 +30,7 @@ export class AgendamentoCriarComponent {
     searchText = '';
 
     ngOnInit(): void{
-
     }
-
 
   constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) {
     this.http.get('https://localhost:7275/ListarAgendamentoConfiguracao')
@@ -90,24 +88,22 @@ export class AgendamentoCriarComponent {
       }
     })
   }
-          salvar(agendamento: IAgendamentoConfiguracao) {
 
-            let agendamentoCriar = {
-              idBeneficiario: 1,
-              idHospital: agendamento.idHospital,
-              idEspecialidade: agendamento.idEspecialidade,
-              idProfissional: agendamento.idProfissional,
-              dataHoraAgendamento: agendamento.dataHoraInicioAtendimento,
-              ativo: true
-            }
-            console.log(agendamento);
-                this.http.post('https://localhost:7275/api/Agendamentos/Criar', agendamentoCriar )
-                  .subscribe((data) => {
-                    this.router.navigate(['agendamentos/listartodos']);
-                  });
+  salvar(agendamento: IAgendamentoConfiguracao) {
 
+    let agendamentoCriar = {
+      idBeneficiario: 1,
+      idHospital: agendamento.idHospital,
+      idEspecialidade: agendamento.idEspecialidade,
+      idProfissional: agendamento.idProfissional,
+      dataHoraAgendamento: agendamento.dataHoraInicioAtendimento,
+      ativo: true
+    }
 
-          }
+    // console.log(agendamento);
+    this.http.post('https://localhost:7275/api/Agendamentos/Criar', agendamentoCriar )
+      .subscribe((data) => {
+        this.router.navigate(['agendamentos/listartodos']);
+      });
   }
-
-
+}

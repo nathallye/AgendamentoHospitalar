@@ -23,12 +23,9 @@
           <td >{{itemAgendamento.nomeHospital}}</td>
           <td >{{itemAgendamento.nomeProfissional}}</td>
           <td><button (click)="salvar(itemAgendamento)" class="save">Salvar</button></td>
-
         </tr>
-
       </tbody>
     </table>
-
 
       <div class="mb-3 row">
 
@@ -37,54 +34,50 @@
   </div>
 
 
+  <!-- <div class="mb-3 row">
+    <div class="mb-3 row">
+  <label for="agendamentoBeneficiario" class="col-sm-4 col-form-label">Beneficiário</label>
+  <select class="form-select" name="ativo" aria-label="ativo">
+    <option selected>Selecione uma opção</option>
+    <option *ngFor="let itemBeneficiario of listaBeneficiario">{{itemBeneficiario.nome}}</option>
+  </select>
 
+  <label for="agendamentoConfig" class="col-sm-4 col-form-label">Especialidade</label>
+  <select class="form-select" name="ativo" aria-label="ativo">
+    <option selected>Selecione uma opção</option>
+    <option *ngFor="let itemAgendamento of listaAgendamentoConfig">{{itemAgendamento.nomeEspecialidade}}</option>
+  </select>
+  </div>
+  <label for="hospital" class="col-sm-4 col-form-label">Hospital</label>
+  <select class="form-select" name="ativo" aria-label="ativo">
+    <option selected>Selecione uma opção</option>
+    <option *ngFor="let hospitalItem of listaHospitais" [value]="hospitalItem.idHospital" [(ngModel)]="novoAgendamento.idHospital" >{{hospitalItem.nome}}</option>
+  </select>
+  </div>
+  <div class="mb-3 row">
+    <label for="especialidade" class="col-sm-4 col-form-label">Especialidade</label>
+    <select class="form-select" name="ativo" aria-label="ativo">
+      <option selected>Selecione uma opção</option>
+      <option *ngFor="let itemEspecialidade of listaEspecialidade" >{{itemEspecialidade.nome}}</option>
+    </select>
+  </div>
+  <div class="mb-3 row">
+    <label for="profissional" class="col-sm-4 col-form-label">Profissional</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="profissional" name="profissional">
+    </div>
+  </div>
 
+  <div class="mb-3 row">
+    <label for="dataHora" class="col-sm-4 col-form-label">Data e Hora</label>
+    <div class="col-sm-6">
+      <input type="text" class="form-control" id="data" name="dataHora">
+    </div>
+  </div>
 
-
-        <!-- <div class="mb-3 row">
-          <div class="mb-3 row">
-        <label for="agendamentoBeneficiario" class="col-sm-4 col-form-label">Beneficiário</label>
-        <select class="form-select" name="ativo" aria-label="ativo">
-          <option selected>Selecione uma opção</option>
-          <option *ngFor="let itemBeneficiario of listaBeneficiario">{{itemBeneficiario.nome}}</option>
-        </select>
-
-        <label for="agendamentoConfig" class="col-sm-4 col-form-label">Especialidade</label>
-        <select class="form-select" name="ativo" aria-label="ativo">
-          <option selected>Selecione uma opção</option>
-          <option *ngFor="let itemAgendamento of listaAgendamentoConfig">{{itemAgendamento.nomeEspecialidade}}</option>
-        </select>
-        </div>
-        <label for="hospital" class="col-sm-4 col-form-label">Hospital</label>
-        <select class="form-select" name="ativo" aria-label="ativo">
-          <option selected>Selecione uma opção</option>
-          <option *ngFor="let hospitalItem of listaHospitais" [value]="hospitalItem.idHospital" [(ngModel)]="novoAgendamento.idHospital" >{{hospitalItem.nome}}</option>
-        </select>
-      </div>
-      <div class="mb-3 row">
-        <label for="especialidade" class="col-sm-4 col-form-label">Especialidade</label>
-        <select class="form-select" name="ativo" aria-label="ativo">
-          <option selected>Selecione uma opção</option>
-          <option *ngFor="let itemEspecialidade of listaEspecialidade" >{{itemEspecialidade.nome}}</option>
-        </select>
-      </div>
-      <div class="mb-3 row">
-        <label for="profissional" class="col-sm-4 col-form-label">Profissional</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="profissional" name="profissional">
-        </div>
-      </div>
-
-      <div class="mb-3 row">
-        <label for="dataHora" class="col-sm-4 col-form-label">Data e Hora</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" id="data" name="dataHora">
-        </div>
-      </div>
-
-      <div class="mb-3 row">
-        <label for="ativo" class="col-sm-4 col-form-label">Ativo</label>
-        <div class="col-sm-6">
-          <input type="checkbox" class="form-check-input" id="ativo"  name="ativo">
-        </div>
-      </div> -->
+  <div class="mb-3 row">
+    <label for="ativo" class="col-sm-4 col-form-label">Ativo</label>
+    <div class="col-sm-6">
+      <input type="checkbox" class="form-check-input" id="ativo"  name="ativo">
+    </div>
+  </div> -->

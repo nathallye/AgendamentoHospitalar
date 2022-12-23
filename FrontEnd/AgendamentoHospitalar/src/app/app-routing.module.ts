@@ -72,7 +72,6 @@ const routes: Routes = [
   { path: 'agendamentos/editar/:id', component: AgendamentoEditarComponent },
   { path: 'agendamentos/excluir/:id', component: AgendamentoExcluirComponent },
 
-
   {path: 'home', component: HomeComponent},
   {path: '', component: HomeComponent}
 
