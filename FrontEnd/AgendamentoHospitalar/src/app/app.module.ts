@@ -28,11 +28,11 @@ import { BeneficiarioCriarComponent } from './components/beneficiario/beneficiar
 import { BeneficiarioEditarComponent } from './components/beneficiario/beneficiario-editar';
 import { BeneficiarioExcluirComponent } from './components/beneficiario/beneficiario-excluir';
 
-import { ProfissionalListaComponent } from './profissional-lista/profissional-lista.component';
-import { ProfissionalExcluirComponent } from './profissional-excluir/profissional-excluir.component';
-import { ProfissionalEditarComponent } from './profissional-editar/profissional-editar.component';
-import { ProfissionalDetalheComponent } from './profissional-detalhe/profissional-detalhe.component';
-import { ProfissionalCriarComponent } from './profissional-criar/profissional-criar.component';
+import { ProfissionalListaComponent } from './components/profissional/profissional-lista';
+import { ProfissionalExcluirComponent } from './components/profissional/profissional-excluir';
+import { ProfissionalEditarComponent } from './components/profissional/profissional-editar';
+import { ProfissionalDetalheComponent } from './components/profissional/profissional-detalhe';
+import { ProfissionalCriarComponent } from './components/profissional/profissional-criar';
 
 import { HospitalListaComponent } from './components/hospital/hospital-lista';
 import { HospitalExcluirComponent } from './components/hospital/hospital-excluir';

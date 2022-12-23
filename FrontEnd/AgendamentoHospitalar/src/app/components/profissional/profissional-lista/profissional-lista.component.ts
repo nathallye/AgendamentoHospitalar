@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { map } from 'rxjs';
 
-import { IProfissionalDto } from '../interfaces/IProfissionalDto';
+import { IProfissionalDto } from '../../../interfaces/IProfissionalDto';
 
 @Component({
   selector: 'app-profissional-lista',

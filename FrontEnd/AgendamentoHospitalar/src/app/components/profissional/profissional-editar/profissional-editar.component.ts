@@ -2,14 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { IProfissionalDto } from '../interfaces/IProfissionalDto';
+import { IProfissionalDto } from '../../../interfaces/IProfissionalDto';
 
 @Component({
-  selector: 'app-profissional-excluir',
-  templateUrl: './profissional-excluir.component.html',
-  styleUrls: ['./profissional-excluir.component.css']
+  selector: 'app-profissional-editar',
+  templateUrl: './profissional-editar.component.html',
+  styleUrls: ['./profissional-editar.component.css']
 })
-export class ProfissionalExcluirComponent {
+export class ProfissionalEditarComponent {
   profissional!: IProfissionalDto;
   idRecebido!: number;
 
@@ -38,19 +38,31 @@ export class ProfissionalExcluirComponent {
     }
   }
 
-  apagar() {
-    if (this.profissional.idProfissional !== 0) {
-      this.http.delete(`https://localhost:7275/api/Profissional/Excluir/${this.idRecebido}`)
-      .subscribe((data) => {
-        this.router.navigate(['profissional/']);
-      });
+  salvar() {
+    if (this.validarInformacoes()) {
+      if (this.profissional.idProfissional != 0) {
 
-    } else {
-      console.log('Erro na validação');
-      // TRATAMENTO DE ERRO
-      // ALERTA
-      // BORDA VERMELHA
+        this.http.patch(`https://localhost:7275/api/Profissional/Atualizar/${this.idRecebido}`, this.profissional)
+          .subscribe((data) => {
+            this.router.navigate(['profissional']);
+          });
+      } else {
+        console.log('Erro na validação');
+        // TRATAMENTO DE ERRO
+        // ALERTA
+        // BORDA VERMELHA
+      }
     }
+  }
+
+  validarInformacoes(): boolean {
+    if (this.profissional.nome == '') {
+      return false;
+    }
+
+    // VALIDAR COM REGEX
+
+    return true;
   }
 
   sair() {
